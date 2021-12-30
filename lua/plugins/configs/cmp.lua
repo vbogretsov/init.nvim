@@ -5,7 +5,7 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "vsnip" },
     { name = "path" },
-    { name = "buffer" },  
+    { name = "buffer" },
   },
   snippet = {
     expand = function(args)

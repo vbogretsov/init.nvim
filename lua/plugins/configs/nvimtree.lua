@@ -3,8 +3,8 @@ vim.g.nvim_tree_git_hl          = 1
 vim.g.nvim_tree_special_files   = {}
 
 vim.g.nvim_tree_icons = {
-  default = '',
-  symlink = '',
+  default = "",
+  symlink = "",
   git = {
     unstaged  = "✗",
     staged    = "✓",
@@ -32,7 +32,7 @@ require("nvim-tree").setup {
   follow          = true,
   auto_close      = true,
   indent_markers  = false,
-  auto_ignore_ft  = 'dashboard',
+  auto_ignore_ft  = "dashboard",
   filters = {
     dotfiles = false,
     custom = {
