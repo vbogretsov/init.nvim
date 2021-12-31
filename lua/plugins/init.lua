@@ -22,7 +22,7 @@ return packer.startup(function()
   -- Proper buffer deletion
   use {
     "famiu/bufdelete.nvim",
-    commit = "456a08f",
+    commit = "1c59b78",
     event  = "VimEnter",
   }
 
@@ -35,14 +35,14 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "218658d",
+    commit = "ac71ca8",
     config = "require'plugins.configs.devicons'",
   }
 
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "3a17c8f",
+    commit    = "9e26823",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "kyazdani42/nvim-web-devicons",
@@ -60,7 +60,7 @@ return packer.startup(function()
   -- File browser
   use {
     "kyazdani42/nvim-tree.lua",
-    commit    = "0aec64d",
+    commit    = "0a2f6b0",
     cmd       = { "NvimTreeToggle", "NvimTreeFindFile" },
     config    = "require'plugins.configs.nvimtree'",
     requires  = "kyazdani42/nvim-web-devicons",
@@ -92,7 +92,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "04cd177",
+    commit  = "a9b6b98",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -116,7 +116,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "5f37fbf",
+    commit    = "1d1da66",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -145,7 +145,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "4efecf7",
+    commit   = "eca04af",
     event    = "BufRead",
     config   = "require'plugins.configs.cmp'",
   }
@@ -170,20 +170,20 @@ return packer.startup(function()
 
   use {
     "hrsh7th/cmp-path",
-    commit = "e1a6916",
+    commit = "4d58224",
     after  = "vim-vsnip",
   }
 
   use {
     "hrsh7th/cmp-buffer",
-    commit = "a0fe524",
+    commit = "a01cfec",
     after  = "cmp-path",
   }
 
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    commit = "0f72e54",
+    commit = "b01c0d0",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
@@ -191,7 +191,7 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "a451f97",
+    commit = "c18fc65",
     event  = "BufReadPost",
     config = "require'plugins.configs.gitsigns'",
   }
