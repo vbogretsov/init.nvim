@@ -101,7 +101,6 @@ return packer.startup(function()
   use {
     "b3nj5m1n/kommentary",
     commit = "2e1c3be",
-    -- keys   = "<leader>c",
     event  = "BufRead",
     config = "require'plugins.configs.kommentary'",
   }
