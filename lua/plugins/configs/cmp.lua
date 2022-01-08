@@ -27,3 +27,15 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
   },
 }
+
+cmp.setup.cmdline("/", {
+  sources = {
+    { name = "buffer" },
+  }
+})
+
+cmp.setup.cmdline(":", {
+  sources = {
+    { name = "cmdline" },
+  }
+})

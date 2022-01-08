@@ -180,6 +180,12 @@ return packer.startup(function()
     after  = "cmp-path",
   }
 
+  use {
+    "hrsh7th/cmp-cmdline",
+    commit = "29ca81a",
+    after  = "nvim-cmp"
+  }
+
   -- LSP
   use {
     "neovim/nvim-lspconfig",
