@@ -11,7 +11,6 @@ return packer.startup(function()
   -- this is arranged on the basis of when a plugin starts
   use {
     "wbthomason/packer.nvim",
-    event = "VimEnter",
   }
 
   -- this is the core repo containing utilities for some features like theme swticher, no need to lazy load
@@ -23,13 +22,13 @@ return packer.startup(function()
   use {
     "famiu/bufdelete.nvim",
     commit = "1c59b78",
-    event  = "VimEnter",
+    cmd    = "MyPlugInit",
   }
 
    -- Clipboard
   use {
     "vbogretsov/easyclip.vim",
-    event = "VimEnter",
+    cmd = "MyPlugInit",
   }
 
   -- Icons
@@ -37,6 +36,7 @@ return packer.startup(function()
     "kyazdani42/nvim-web-devicons",
     commit = "ac71ca8",
     config = "require'plugins.configs.devicons'",
+    cmd    = "MyPlugInit",
   }
 
   -- Status line
@@ -45,7 +45,7 @@ return packer.startup(function()
     commit    = "9e26823",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
-    requires  = "kyazdani42/nvim-web-devicons",
+    requires  = "nvim-web-devicons",
   }
 
   -- Buffer line
@@ -70,7 +70,7 @@ return packer.startup(function()
   use {
     "lukas-reineke/virt-column.nvim",
     tag    = "v1.3.0",
-    event  = "BufRead",
+    cmd    = "MyPlugInit",
     config = "require'plugins.configs.colorcolumn'",
   }
 
@@ -78,7 +78,7 @@ return packer.startup(function()
   use {
     "lukas-reineke/indent-blankline.nvim",
     tag    = "v2.11.0",
-    event  = "BufRead",
+    cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
   }
 
@@ -86,13 +86,13 @@ return packer.startup(function()
   use {
     "tpope/vim-surround",
     tag   = "v2.2",
-    event = "BufRead",
+    cmd   = "MyPlugInit",
   }
 
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "a9b6b98",
+    commit  = "5348e4a",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -101,14 +101,14 @@ return packer.startup(function()
   use {
     "b3nj5m1n/kommentary",
     commit = "2e1c3be",
-    event  = "BufRead",
+    cmd    = "MyPlugInit",
     config = "require'plugins.configs.kommentary'",
   }
 
   use {
     "norcalli/nvim-colorizer.lua",
     commit  = "36c610a",
-    event   = "BufRead",
+    cmd     = "MyPlugInit",
     config  = "require'plugins.configs.colorizer'",
   }
 
@@ -132,21 +132,21 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    event  = "BufRead",
+    cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
   }
 
   use {
     "windwp/nvim-ts-autotag",
-    after = 'nvim-treesitter',
+    after = "nvim-treesitter",
   }
 
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
     commit   = "eca04af",
-    event    = "BufRead",
+    cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
 
@@ -198,7 +198,7 @@ return packer.startup(function()
   use {
     "lewis6991/gitsigns.nvim",
     commit = "c18fc65",
-    event  = "BufReadPost",
+    cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
 
@@ -225,3 +225,4 @@ return packer.startup(function()
   -- }
 
 end)
+
