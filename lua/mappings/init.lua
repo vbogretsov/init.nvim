@@ -44,8 +44,8 @@ vim.api.nvim_set_keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", { norem
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = false })
 
-vim.api.nvim_set_keymap("x", "K", ":move \"<-2<CR>gv-gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("x", "J", ":move \">+1<CR>gv-gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "K", ":move -2<CR>gv-gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("x", "J", ":move +1<CR>gv-gv", { noremap = true, silent = true })
 
 -- Clipboard
 vim.api.nvim_set_keymap("v", "y", "y:call ClipboardYank()<CR>", { silent = true })
@@ -63,8 +63,7 @@ vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { nor
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "<cmd>Telescope live_grep<CR>", { noremap = true })
---vim.api.nvim_set_keymap("n", "f", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "f", "/", { noremap = true })
+vim.api.nvim_set_keymap("n", "f", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>Telescope lsp_code_actions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>Telescope lsp_type_definitions<CR>", { noremap = true })
