@@ -16,7 +16,11 @@ return packer.startup(function()
   -- this is the core repo containing utilities for some features like theme swticher, no need to lazy load
   use "nvim-lua/plenary.nvim"
 
-  use "vbogretsov/everforest"
+  -- use "vbogretsov/everforest"
+  use {
+    "sainnhe/everforest",
+    commit = "6dfb99b",
+  }
 
   -- Proper buffer deletion
   use {
@@ -216,6 +220,14 @@ return packer.startup(function()
     commit = "265bbff",
     config = "require'plugins.configs.toggleterm'",
     keys   = "<c-\\>",
+  }
+
+  use {
+    "abecodes/tabout.nvim",
+    commit = "6ff556b",
+    config = "require('tabout').setup()",
+    cmd    = "MyPlugInit",
+    wants  = "nvim-treesitter",
   }
 
   -- use {
