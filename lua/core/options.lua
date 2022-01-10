@@ -46,10 +46,10 @@ vim.wo.signcolumn       = "yes"
 
 vim.o.shiftwidth        = tabsize
 
-vim.bo.tabstop          = tabsize
-vim.bo.softtabstop      = tabsize
-vim.bo.autoindent       = true
-vim.bo.expandtab        = true
+vim.o.tabstop           = tabsize
+vim.o.softtabstop       = tabsize
+vim.o.autoindent        = true
+vim.o.expandtab         = true
 
 vim.g.matchparen_timeout = 1
 vim.g.matchparen_insert_timeout = 1

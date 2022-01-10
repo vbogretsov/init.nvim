@@ -35,6 +35,14 @@ return packer.startup(function()
     cmd = "MyPlugInit",
   }
 
+  use {
+    "petertriho/nvim-scrollbar",
+    -- disable = vim.api.nvim_eval("has('gui_running')") ~= 1,
+    commit  = "328d414",
+    config  = "require'plugins.configs.scrollbar'",
+    cmd     = "MyPlugInit",
+  }
+
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
@@ -86,19 +94,19 @@ return packer.startup(function()
     config = "require'plugins.configs.indent'",
   }
 
-  -- Surround
-  use {
-    "tpope/vim-surround",
-    tag   = "v2.2",
-    cmd   = "MyPlugInit",
-  }
-
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
     commit  = "5348e4a",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
+  }
+
+  -- Surround
+  use {
+    "tpope/vim-surround",
+    tag   = "v2.2",
+    cmd   = "MyPlugInit",
   }
 
   -- Comments
@@ -120,7 +128,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "1d1da66",
+    commit    = "5060f3f",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {

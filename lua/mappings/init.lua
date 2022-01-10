@@ -44,8 +44,12 @@ vim.api.nvim_set_keymap("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", { norem
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = false })
 
+-- Move selected lines up/down
 vim.api.nvim_set_keymap("x", "K", ":move -2<CR>gv-gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "J", ":move +1<CR>gv-gv", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "U", "<C-u>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "D", "<C-d>", { noremap = true, silent = true })
 
 -- Clipboard
 vim.api.nvim_set_keymap("v", "y", "y:call ClipboardYank()<CR>", { silent = true })
