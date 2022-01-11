@@ -38,7 +38,7 @@ return packer.startup(function()
   use {
     "petertriho/nvim-scrollbar",
     -- disable = vim.api.nvim_eval("has('gui_running')") ~= 1,
-    commit  = "328d414",
+    commit  = "a2db95e",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
   }
