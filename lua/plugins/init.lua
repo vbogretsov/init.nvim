@@ -198,6 +198,18 @@ return packer.startup(function()
     after  = "nvim-cmp"
   }
 
+  use {
+    "tzachar/cmp-fuzzy-buffer",
+    commit = "0e00ab6",
+    after  = "nvim-cmp",
+  }
+
+  use {
+    "tzachar/cmp-fuzzy-path",
+    commit = "1843e09",
+    after  = "nvim-cmp",
+  }
+
   -- LSP
   use {
     "neovim/nvim-lspconfig",

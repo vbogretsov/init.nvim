@@ -30,12 +30,31 @@ cmp.setup {
 
 cmp.setup.cmdline("/", {
   sources = {
-    { name = "buffer" },
+    { name = "fuzzy_buffer" },
   }
 })
 
 cmp.setup.cmdline(":", {
   sources = {
     { name = "cmdline" },
+    {
+      name = "fuzzy_path",
+      options = { fd_cmd = {
+        "fd",
+        "--type",
+        "f",
+        "--max-depth",
+        "10",
+        "--hidden",
+        "--strip-cwd-prefix",
+        "--exclude",
+        ".git",
+        "--exclude",
+        ".venv",
+        "--exclude",
+        "__pycache__",
+      } },
+    },
+    { name = "fuzzy_buffer" },
   }
 })

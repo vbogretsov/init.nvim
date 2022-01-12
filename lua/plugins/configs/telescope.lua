@@ -53,6 +53,13 @@ require("telescope").setup {
         "--type",
         "f",
         "--strip-cwd-prefix",
+        "--hidden",
+        "--exclude",
+        ".git",
+        "--exclude",
+        ".venv",
+        "--exclude",
+        "__pycache__",
       },
     }
   },
