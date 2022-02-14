@@ -24,7 +24,7 @@ end
 
 require("telescope").setup {
   defaults = {
-    -- buffer_previewer_maker = new_maker,
+    buffer_previewer_maker = new_maker,
     preview = {
       filesize_limit = 0.5,
     },

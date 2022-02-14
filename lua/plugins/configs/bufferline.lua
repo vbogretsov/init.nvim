@@ -21,7 +21,20 @@ require("bufferline").setup {
   },
   highlights = {
     fill = {
-      guibg = "#232a2e",
+      -- guibg = "#232a2e",
+      guibg = "#2b3339",
+    },
+    separator = {
+      guibg = "#2b3339",
+    },
+    modified = {
+      guibg = "#2b3339",
+    },
+    background = {
+      guibg = "#2b3339",
+    },
+    close_button = {
+      guibg = "#2b3339",
     },
     buffer_selected = {
       gui = "",
