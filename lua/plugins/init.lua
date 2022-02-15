@@ -244,13 +244,13 @@ return packer.startup(function()
     keys   = "<c-\\>",
   }
 
-  use {
-    "abecodes/tabout.nvim",
-    commit = "6ff556b",
-    config = "require('tabout').setup()",
-    cmd    = "MyPlugInit",
-    wants  = "nvim-treesitter",
-  }
+  -- use {
+  --   "abecodes/tabout.nvim",
+  --   commit = "6ff556b",
+  --   config = "require('tabout').setup()",
+  --   cmd    = "MyPlugInit",
+  --   wants  = "nvim-treesitter",
+  -- }
 
   use {
     "dhruvasagar/vim-table-mode",
