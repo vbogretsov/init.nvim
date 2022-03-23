@@ -29,6 +29,7 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = false
 
 -- Buffers
 vim.api.nvim_set_keymap("n", "<leader>w", ":Bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>W", ":Bdelete!<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })

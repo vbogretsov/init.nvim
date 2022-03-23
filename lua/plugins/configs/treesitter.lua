@@ -6,7 +6,12 @@ require("nvim-treesitter.configs").setup {
   },
   indent = {
     enable  = true,
-    disable = { "yaml", "python", "c" },
+    disable = {
+      "yaml",
+      "python",
+      "c",
+      "go",
+    },
   },
   autotag = {
     enable = true,
