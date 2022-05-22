@@ -230,6 +230,13 @@ return packer.startup(function()
     config = "require'plugins.configs.lspconfig'",
   }
 
+  use {
+    "weilbith/nvim-code-action-menu",
+    commit = "a864a79",
+    cmd    = "CodeActionMenu",
+    setup  = "require'plugins.configs.codeactions'",
+  }
+
   -- Git
   use {
     "lewis6991/gitsigns.nvim",

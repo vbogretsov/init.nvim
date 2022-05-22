@@ -70,13 +70,12 @@ vim.api.nvim_set_keymap("n", "<leader>k", ":FocusSplitUp<CR>", { silent = true }
 vim.api.nvim_set_keymap("n", "<leader>l", ":FocusSplitRight<CR>", { silent = true })
 
 -- Navigation
+vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>CodeActionMenu<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "<cmd>Telescope live_grep<CR>", { noremap = true })
--- vim.api.nvim_set_keymap("n", "f", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "f", "/", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>Telescope lsp_code_actions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>Telescope lsp_type_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>Telescope lsp_references<CR>", { noremap = true })
