@@ -1,4 +1,5 @@
-vim.g.nvim_tree_indent_markers  = 1
+vim.cmd[[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]]
+
 vim.g.nvim_tree_git_hl          = 1
 vim.g.nvim_tree_special_files   = {}
 
@@ -29,10 +30,12 @@ vim.g.nvim_tree_icons = {
 require("nvim-tree").setup {
   disable_netrw   = true,
   hijack_netrw    = true,
-  follow          = true,
   auto_close      = true,
-  indent_markers  = false,
-  auto_ignore_ft  = "dashboard",
+  renderer        = {
+    indent_markers = {
+      enable = true,
+    },
+  },
   filters = {
     dotfiles = false,
     custom = {

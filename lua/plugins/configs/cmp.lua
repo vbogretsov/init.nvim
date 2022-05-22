@@ -23,39 +23,21 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     }),
-    ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+    ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s", "c" }),
+    ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s", "c" }),
   },
 }
 
 cmp.setup.cmdline("/", {
   sources = {
-    { name = 'cmdline' },
+    { name = "cmdline" },
     { name = "fuzzy_buffer" },
+    { name = "buffer" },
   }
 })
 
--- cmp.setup.cmdline(":", {
---   sources = {
---     { name = "cmdline" },
---     {
---       name = "fuzzy_path",
---       options = { fd_cmd = {
---         "fd",
---         "--type",
---         "f",
---         "--max-depth",
---         "5",
---         "--hidden",
---         "--strip-cwd-prefix",
---         "--exclude",
---         ".git",
---         "--exclude",
---         ".venv",
---         "--exclude",
---         "__pycache__",
---       } },
---     },
---     { name = "fuzzy_buffer" },
---   }
--- })
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = "cmdline" },
+  })
+})

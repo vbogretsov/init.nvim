@@ -61,7 +61,13 @@ vim.api.nvim_set_keymap("n", "p", "p:call ClipboardPaste()<CR>", { silent = true
 
 -- File tree
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>NvimTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>NvimTreeFindFile<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>NvimTreeFindFile<CR>", { noremap = true })
+
+-- Focus window
+vim.api.nvim_set_keymap("n", "<leader>h", ":FocusSplitLeft<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>j", ":FocusSplitDown<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>k", ":FocusSplitUp<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>l", ":FocusSplitRight<CR>", { silent = true })
 
 -- Navigation
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { noremap = true })
