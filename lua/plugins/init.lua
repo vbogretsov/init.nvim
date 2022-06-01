@@ -124,6 +124,15 @@ return packer.startup(function()
     config  = "require'plugins.configs.colorizer'",
   }
 
+  use {
+    "tzachar/fuzzy.nvim",
+    commit   = "d5fee69",
+    cmd      = "MyPlugInit",
+    requires = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+  }
+
   -- Navigation
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
@@ -138,15 +147,10 @@ return packer.startup(function()
          commit = "b8662b0",
          run    = "make",
       },
-    },
-  }
-
-  use {
-    "tzachar/fuzzy.nvim",
-    commit   = "d5fee69",
-    cmd      = "MyPlugInit",
-    requires = {
-      "nvim-telescope/telescope-fzf-native.nvim",
+      {
+         "nvim-telescope/telescope-ui-select.nvim",
+         commit = "62ea5e5",
+      }
     },
   }
 
@@ -228,13 +232,6 @@ return packer.startup(function()
     commit = "9e6bcf5",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
-  }
-
-  use {
-    "weilbith/nvim-code-action-menu",
-    commit = "a864a79",
-    cmd    = "CodeActionMenu",
-    setup  = "require'plugins.configs.codeactions'",
   }
 
   -- Git

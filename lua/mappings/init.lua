@@ -70,7 +70,7 @@ vim.api.nvim_set_keymap("n", "<leader>k", ":FocusSplitUp<CR>", { silent = true }
 vim.api.nvim_set_keymap("n", "<leader>l", ":FocusSplitRight<CR>", { silent = true })
 
 -- Navigation
-vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>CodeActionMenu<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { noremap = true })

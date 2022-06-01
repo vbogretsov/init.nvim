@@ -69,8 +69,20 @@ require("telescope").setup {
       override_generic_sorter = true,
       override_file_sorter = true,
       case_mode = "ignore_case",
-    }
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        prompt_prefix = "   ",
+        layout_strategy = "vertical",
+        layout_config = {
+          height = 0.4,
+          mirror = false,
+          prompt_position = "bottom",
+        },
+      }
+    },
   }
 }
 
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("ui-select")
