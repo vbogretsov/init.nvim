@@ -3,7 +3,6 @@ vim.cmd[[hi clear VertSplit]]
 vim.cmd[[hi CursorLineNr ctermfg=White guifg=White]]
 
 vim.g.everforest_background = "soft"
-vim.g.everforest_sign_column_background = 1
 vim.g.everforest_show_eob = 0
 vim.g.everforest_better_performance = 1
 

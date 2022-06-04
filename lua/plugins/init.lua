@@ -19,7 +19,7 @@ return packer.startup(function()
   -- use "vbogretsov/everforest"
   use {
     "sainnhe/everforest",
-    commit = "1c86665",
+    commit = "eca7c8c",
   }
 
   -- Proper buffer deletion
@@ -35,11 +35,16 @@ return packer.startup(function()
     cmd = "MyPlugInit",
   }
 
+  -- Scrollbar
   use {
     "petertriho/nvim-scrollbar",
     commit  = "21c606c",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
+    requires = {
+      "kevinhwang91/nvim-hlslens",
+      commit = "1944094",
+    },
   }
 
   -- Icons
