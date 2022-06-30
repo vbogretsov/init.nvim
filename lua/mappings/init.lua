@@ -27,6 +27,9 @@ vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = false
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
 
+-- noremap <C-w>z <C-w>\|<C-w>\_
+-- vim.api.nvim_set_keymap("n", "<C-w>o", "<C-w>\\|<C-w>\\_", { noremap = true, silent = false })
+
 -- Buffers
 vim.api.nvim_set_keymap("n", "<leader>w", ":Bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>W", ":Bdelete!<CR>", { noremap = true, silent = true })
