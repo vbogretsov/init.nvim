@@ -3,7 +3,6 @@ vim.cmd[[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTre
 require("nvim-tree").setup {
   disable_netrw   = true,
   hijack_netrw    = true,
-  auto_close      = true,
   renderer        = {
     highlight_git = true,
     special_files = {},
@@ -34,6 +33,12 @@ require("nvim-tree").setup {
     },
     indent_markers = {
       enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        item = "│ ",
+        none = " ",
+      },
     },
   },
   filters = {
@@ -54,7 +59,6 @@ require("nvim-tree").setup {
   },
   filesystem_watchers = {
     enable = false,
-    interval = 100,
     debounce_delay = 50,
   },
 }

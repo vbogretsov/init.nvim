@@ -19,7 +19,7 @@ return packer.startup(function()
   -- use "vbogretsov/everforest"
   use {
     "sainnhe/everforest",
-    commit = "933f827",
+    commit = "9a8b4f8",
   }
 
   -- Proper buffer deletion
@@ -38,7 +38,7 @@ return packer.startup(function()
   -- Scrollbar
   use {
     "petertriho/nvim-scrollbar",
-    commit  = "3ef3382",
+    commit  = "ce0df69",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
     requires = {
@@ -50,7 +50,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "8d2c533",
+    commit = "2d02a56",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -58,7 +58,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "5113cdb",
+    commit    = "8d956c1",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -67,7 +67,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "68839d6",
+    commit   = "d7b775a",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -76,6 +76,7 @@ return packer.startup(function()
   -- File browser
   use {
     "kyazdani42/nvim-tree.lua",
+    -- commit    = "08ab346",
     commit    = "7285898",
     cmd       = { "NvimTreeToggle", "NvimTreeFindFile" },
     config    = "require'plugins.configs.nvimtree'",
@@ -101,7 +102,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "4a95b39",
+    commit  = "972a797",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -141,7 +142,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "d88b44d",
+    commit    = "bb8db6e",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -176,7 +177,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "9897465",
+    commit   = "c4dcb12",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
@@ -219,14 +220,14 @@ return packer.startup(function()
 
   use {
     "tzachar/cmp-fuzzy-buffer",
-    commit  = "c00e590",
+    commit  = "a939269",
     after   = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
 
   use {
     "tzachar/cmp-fuzzy-path",
-    commit   = "8c1ecaa",
+    commit   = "b5f137c",
     after    = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
