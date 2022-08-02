@@ -60,6 +60,10 @@ require("telescope").setup {
         ".venv",
         "--exclude",
         "__pycache__",
+        "--exclude",
+        "*.avro",
+        "--exclude",
+        "*.jsonl",
       },
     }
   },

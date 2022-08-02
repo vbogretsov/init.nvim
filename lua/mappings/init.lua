@@ -99,7 +99,7 @@ vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("v", "<leader>c", "<Plug>kommentary_visual_default", {})
 
 -- Outline
-vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>SymbolsOutline<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<leader>o", "<cmd>SymbolsOutline<CR>", { noremap = true })
 
 -- Search
 vim.api.nvim_set_keymap("n", "n",

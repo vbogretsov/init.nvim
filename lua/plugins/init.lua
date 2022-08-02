@@ -177,7 +177,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "c4dcb12",
+    commit   = "89df2cb",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
