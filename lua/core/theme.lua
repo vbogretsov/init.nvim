@@ -10,3 +10,6 @@ vim.cmd[[colorscheme everforest]]
 
 -- Disable outline highlight (option highlight_hovered_item doesn't work)
 vim.cmd[[hi clear FocusedSymbol ]]
+-- Temporary hack after update
+vim.cmd[[hi clear Comment ]]
+vim.cmd[[hi Comment guifg=#859289 ]]

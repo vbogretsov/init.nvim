@@ -14,5 +14,7 @@ require("indent_blankline").setup {
     "dashboard",
     "packer",
     "NvimTree",
+    "neo-tree",
+    "text",
   },
 }

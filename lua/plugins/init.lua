@@ -19,7 +19,7 @@ return packer.startup(function()
   -- use "vbogretsov/everforest"
   use {
     "sainnhe/everforest",
-    commit = "9a8b4f8",
+    commit = "45dd5af",
   }
 
   -- Proper buffer deletion
@@ -29,7 +29,7 @@ return packer.startup(function()
     cmd    = "MyPlugInit",
   }
 
-   -- Clipboard
+  -- Clipboard
   use {
     "vbogretsov/easyclip.vim",
     cmd = "MyPlugInit",
@@ -76,12 +76,23 @@ return packer.startup(function()
   -- File browser
   use {
     "kyazdani42/nvim-tree.lua",
-    -- commit    = "08ab346",
     commit    = "7285898",
     cmd       = { "NvimTreeToggle", "NvimTreeFindFile" },
     config    = "require'plugins.configs.nvimtree'",
     requires  = "kyazdani42/nvim-web-devicons",
   }
+
+  -- use {
+  -- "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   cmd    = "Neotree",
+  --   config = "require'plugins.configs.neotree'",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "kyazdani42/nvim-web-devicons",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  -- }
 
   -- Color column
   use {
@@ -280,6 +291,12 @@ return packer.startup(function()
   use {
     "gpanders/editorconfig.nvim",
     tag = "v1.3.0",
+    cmd = "MyPlugInit",
+  }
+
+  use {
+    "jbyuki/venn.nvim",
+    commit = "71856b5",
     cmd = "MyPlugInit",
   }
 
