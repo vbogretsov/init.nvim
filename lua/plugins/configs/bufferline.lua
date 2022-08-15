@@ -27,28 +27,33 @@ require("bufferline").setup {
   },
   highlights = {
     fill = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     separator = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     modified = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     background = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     close_button = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     numbers = {
-      guibg = "#2b3339",
+      bg = "#2b3339",
     },
     numbers_selected = {
-      gui = "bold",
+      bold = true,
     },
     buffer_selected = {
-      gui = "bold",
+      bold = true,
     },
   },
 }
+
+vim.cmd[[hi clear BufferLineBufferSelected]]
+vim.cmd[[hi clear BufferLineNumbersSelected]]
+vim.cmd[[hi clear BufferLineBufferVisible]]
+vim.cmd[[hi clear BufferLineNumbersVisible]]

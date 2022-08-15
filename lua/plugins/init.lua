@@ -19,7 +19,8 @@ return packer.startup(function()
   -- use "vbogretsov/everforest"
   use {
     "sainnhe/everforest",
-    commit = "45dd5af",
+    commit = "33e83ef",
+    -- commit = "f748681",
   }
 
   -- Proper buffer deletion
@@ -58,7 +59,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "6d11f9f",
+    commit    = "c0510dd",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -67,7 +68,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "c4dd9b4",
+    commit   = "dd2adda",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -105,7 +106,7 @@ return packer.startup(function()
   -- Indent balnk lines
   use {
     "lukas-reineke/indent-blankline.nvim",
-    tag    = "v2.19.1",
+    tag    = "v2.20.0",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
   }
@@ -113,7 +114,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "972a797",
+    commit  = "34bd374",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -153,14 +154,14 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "b5833a6",
+    commit    = "d793de0",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
       "nvim-lua/plenary.nvim",
       {
          "nvim-telescope/telescope-fzf-native.nvim",
-         commit = "6a33ece",
+         commit = "6791f74",
          run    = "make",
       },
       {
@@ -188,7 +189,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "89df2cb",
+    commit   = "b1ebdb0",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
@@ -213,19 +214,19 @@ return packer.startup(function()
 
   use {
     "hrsh7th/cmp-path",
-    commit = "981baf9",
+    commit = "447c87c",
     after  = "vim-vsnip",
   }
 
   use {
     "hrsh7th/cmp-buffer",
-    commit = "62fc67a",
+    commit = "3022dbc",
     after  = "cmp-path",
   }
 
   use {
     "hrsh7th/cmp-cmdline",
-    commit = "c36ca4b",
+    commit = "9c0e331",
     after  = "nvim-cmp"
   }
 
@@ -238,7 +239,7 @@ return packer.startup(function()
 
   use {
     "tzachar/cmp-fuzzy-path",
-    commit   = "b5f137c",
+    commit   = "b4a8c1b",
     after    = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
@@ -246,22 +247,22 @@ return packer.startup(function()
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    commit = "057ca6b",
+    commit = "da7461b",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
 
   -- Remote containers
-  use {
-    "jamestthompson3/nvim-remote-containers",
-    commit = "d635bea",
-    cmd = "MyPlugInit",
-  }
+  -- use {
+  --   "jamestthompson3/nvim-remote-containers",
+  --   commit = "d635bea",
+  --   cmd = "MyPlugInit",
+  -- }
 
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "4883988",
+    commit = "29468d8",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
@@ -269,7 +270,7 @@ return packer.startup(function()
   -- Outline
   use {
     "simrat39/symbols-outline.nvim",
-    commit = "15ae99c",
+    commit = "13e89b6",
     cmd    = "SymbolsOutline",
     setup  = "require'plugins.configs.outline'",
   }
@@ -290,7 +291,7 @@ return packer.startup(function()
 
   use {
     "gpanders/editorconfig.nvim",
-    tag = "v1.3.0",
+    tag = "7378650",
     cmd = "MyPlugInit",
   }
 
