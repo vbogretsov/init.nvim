@@ -16,11 +16,9 @@ return packer.startup(function()
   -- this is the core repo containing utilities for some features like theme swticher, no need to lazy load
   use "nvim-lua/plenary.nvim"
 
-  -- use "vbogretsov/everforest"
   use {
     "sainnhe/everforest",
-    commit = "33e83ef",
-    -- commit = "f748681",
+    commit = "225e0c4",
   }
 
   -- Proper buffer deletion
@@ -59,7 +57,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "c0510dd",
+    commit    = "3cf4540",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -68,7 +66,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "dd2adda",
+    commit   = "fb7b173",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -114,7 +112,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "34bd374",
+    commit  = "0a18e10",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -174,8 +172,9 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "b8fd5df",
-    commit = "989c750",
+    commit = "9560e3c",
+    -- commit = "989c750",
+    -- commit = "e5c6051",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",

@@ -15,7 +15,9 @@ require("bufferline").setup {
         text_align  = "center",
       },
     },
-    indicator_icon          = " ",
+    indicator = {
+      icon = " ",
+    },
     close_command           = "Bdelete! %d",
     diagnostics             = false,
     show_buffer_close_icons = true,
