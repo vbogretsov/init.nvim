@@ -18,7 +18,7 @@ return packer.startup(function()
 
   use {
     "sainnhe/everforest",
-    commit = "225e0c4",
+    commit = "7653283",
   }
 
   -- Proper buffer deletion
@@ -49,7 +49,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "2d02a56",
+    commit = "9697285",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -57,7 +57,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "3cf4540",
+    commit    = "a52f078",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -66,7 +66,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "fb7b173",
+    commit   = "83bf4dc",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -96,7 +96,7 @@ return packer.startup(function()
   -- Color column
   use {
     "lukas-reineke/virt-column.nvim",
-    tag    = "v1.5.3",
+    tag    = "v1.5.4",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.colorcolumn'",
   }
@@ -104,7 +104,7 @@ return packer.startup(function()
   -- Indent balnk lines
   use {
     "lukas-reineke/indent-blankline.nvim",
-    tag    = "v2.20.0",
+    tag    = "v2.20.2",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
   }
@@ -112,7 +112,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "0a18e10",
+    commit  = "14cc2a4",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -152,7 +152,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "d793de0",
+    commit    = "30e2dc5",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -172,9 +172,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "9560e3c",
-    -- commit = "989c750",
-    -- commit = "e5c6051",
+    -- commit = "9560e3c",
+    commit = "8ec59ae",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
