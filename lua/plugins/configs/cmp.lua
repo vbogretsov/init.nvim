@@ -36,8 +36,19 @@ cmp.setup.cmdline("/", {
   }
 })
 
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
   sources = cmp.config.sources({
-    { name = "cmdline" },
+    {
+      name = "fuzzy_path",
+      option = {
+        fd_timeout_msec = 1500,
+      },
+      fd_cmd = {
+        "fd", "-d", "5", "-p", "-E", ".venv/**", "-E", ".git/**", "-E", "*.pyc", "-E", "*.o",
+      },
+    },
+    {
+      name = "cmdline",
+    },
   })
 })

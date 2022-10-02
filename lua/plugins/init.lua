@@ -49,7 +49,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "9697285",
+    commit = "563f363",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -112,7 +112,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "14cc2a4",
+    commit  = "4fc96c8",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -152,7 +152,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "30e2dc5",
+    commit    = "76ea9a8",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -187,7 +187,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "b1ebdb0",
+    commit   = "b0dff0e",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
@@ -224,7 +224,7 @@ return packer.startup(function()
 
   use {
     "hrsh7th/cmp-cmdline",
-    commit = "9c0e331",
+    commit = "c66c379",
     after  = "nvim-cmp"
   }
 
@@ -237,7 +237,7 @@ return packer.startup(function()
 
   use {
     "tzachar/cmp-fuzzy-path",
-    commit   = "b4a8c1b",
+    commit   = "8570977",
     after    = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
@@ -245,7 +245,7 @@ return packer.startup(function()
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    commit = "da7461b",
+    commit = "f11fdff",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
@@ -260,7 +260,7 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "29468d8",
+    commit = "f98c85e",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
@@ -274,9 +274,15 @@ return packer.startup(function()
   }
 
   -- Terminal
+  -- use {
+  --   "akinsho/nvim-toggleterm.lua",
+  --   commit = "4aa4f40",
+  --   config = "require'plugins.configs.toggleterm'",
+  --   keys   = "<c-\\>",
+  -- }
   use {
-    "akinsho/nvim-toggleterm.lua",
-    commit = "4aa4f40",
+    "akinsho/toggleterm.nvim",
+    commit = "2a787c4",
     config = "require'plugins.configs.toggleterm'",
     keys   = "<c-\\>",
   }
@@ -289,15 +295,15 @@ return packer.startup(function()
 
   use {
     "gpanders/editorconfig.nvim",
-    tag = "7378650",
+    tag = "7d10fe6",
     cmd = "MyPlugInit",
   }
 
-  use {
-    "jbyuki/venn.nvim",
-    commit = "71856b5",
-    cmd = "MyPlugInit",
-  }
+  -- use {
+  --   "jbyuki/venn.nvim",
+  --   commit = "71856b5",
+  --   cmd = "MyPlugInit",
+  -- }
 
 end)
 
