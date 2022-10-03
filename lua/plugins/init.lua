@@ -83,7 +83,8 @@ return packer.startup(function()
 
   -- use {
   -- "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v2.x",
+  --   -- branch = "v2.x",
+  --   tag    = "v2.42",
   --   cmd    = "Neotree",
   --   config = "require'plugins.configs.neotree'",
   --   requires = {
@@ -172,8 +173,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "9560e3c",
-    commit = "8ec59ae",
+    commit = "7ce47dd",
+    -- commit = "8ec59ae",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
