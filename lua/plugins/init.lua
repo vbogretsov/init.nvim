@@ -160,8 +160,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "7ce47dd",
-    commit = "3eb6577",
+    commit = "3256eb2",
+    -- commit = "3eb6577",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
