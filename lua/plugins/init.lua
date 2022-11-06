@@ -18,7 +18,7 @@ return packer.startup(function()
 
   use {
     "sainnhe/everforest",
-    commit = "7653283",
+    commit = "06fda35",
   }
 
   -- Proper buffer deletion
