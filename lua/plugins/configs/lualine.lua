@@ -1,3 +1,6 @@
+local palette = vim.fn["my#get_palette"]()
+
+
 return require("lualine").setup {
   options = {
     icons_enabled = true,
@@ -13,10 +16,10 @@ return require("lualine").setup {
       sources   = { "nvim_diagnostic" },
       sections  = { "error", "warn", "info", "hint" },
       diagnostics_color = {
-        error = { fg = "#e68183" },
-        warn  = { fg = "#dbbc7f" },
-        info  = { fg = "#87c095" },
-        hint  = { fg = "#868d80" },
+        error = { fg = palette["red"][1] },
+        warn  = { fg = palette["yellow"][1] },
+        info  = { fg = palette["aqua"][1] },
+        hint  = { fg = palette["grey0"][1] },
       },
       symbols = { error = " ", warn = " ", info = " ", hint = "" },
     }},

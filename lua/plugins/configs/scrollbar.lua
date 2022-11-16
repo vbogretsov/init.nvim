@@ -1,11 +1,14 @@
+local palette = vim.fn["my#get_palette"]()
+
+
 require("scrollbar").setup({
   marks = {
-    Search = { color = "#d3c6aa" },
-    Error = { color = "#e67e80" },
-    Warn = { color = "#dbbc7f" },
-    Info = { color = "#a7c080" },
-    Hint = { color = "#83c092" },
-    Misc = { color = "#d699b6" },
+    Search = { color = palette["fg"][1] },
+    Error = { color = palette["red"][1] },
+    Warn = { color = palette["yellow"][1] },
+    Info = { color = palette["green"][1] },
+    Hint = { color = palette["aqua"][1] },
+    Misc = { color = palette["cyan"] },
   },
   handlers = {
     diagnostic = true,
