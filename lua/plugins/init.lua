@@ -74,11 +74,14 @@ return packer.startup(function()
 
   -- File browser
   use {
-    "kyazdani42/nvim-tree.lua",
-    commit    = "7285898",
-    cmd       = { "NvimTreeToggle", "NvimTreeFindFile" },
-    config    = "require'plugins.configs.nvimtree'",
-    requires  = "kyazdani42/nvim-web-devicons",
+    "nvim-neo-tree/neo-tree.nvim",
+    commit    = "5c209e5",
+    cmd       = "MyPlugInit",
+    config    = "require'plugins.configs.neotree'",
+    requires  = {
+      "kyazdani42/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
   }
 
   -- Color column
@@ -100,7 +103,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "4fc96c8",
+    commit  = "6b6e35f",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }

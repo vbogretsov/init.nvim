@@ -13,3 +13,15 @@ vim.cmd[[hi clear FocusedSymbol ]]
 -- Temporary hack after update
 vim.cmd[[hi clear Comment ]]
 vim.cmd[[hi Comment guifg=#859289 ]]
+vim.cmd[[hi clear FloatBorder]]
+
+vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
+vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
+
+vim.fn["my#get_palette"] = function ()
+  local background = vim.g.everforest_background
+  local configuration = vim.fn["everforest#get_configuration"]()
+  return vim.fn["everforest#get_palette"](background, configuration)
+end
