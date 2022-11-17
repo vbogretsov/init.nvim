@@ -12,7 +12,6 @@ vim.cmd[[colorscheme everforest]]
 vim.cmd[[hi clear FocusedSymbol ]]
 -- Temporary hack after update
 vim.cmd[[hi clear Comment ]]
-vim.cmd[[hi Comment guifg=#859289 ]]
 vim.cmd[[hi clear FloatBorder]]
 
 vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
@@ -26,11 +25,7 @@ vim.fn["my#get_palette"] = function ()
   return vim.fn["everforest#get_palette"](background, configuration)
 end
 
--- TODO: override hint and info hl groups
--- local palette = vim.fn["my#get_palette"]()
--- vim.cmd[[hi clear DiagnosticInfo]]
--- vim.cmd([[hi DiagnosticInfo guifg=red]])
--- vim.cmd([[hi DiagnosticInfo guifg=red]] .. palette["green"][1])
--- vim.cmd[[hi clear DiagnosticHint]]
--- vim.cmd([[hi DiagnosticHint guifg=red]])
--- vim.cmd([[hi DiagnosticHint guifg=red]] .. palette["aqua"][1])
+local palette = vim.fn["my#get_palette"]()
+vim.cmd([[hi Comment guifg=]] .. palette["grey1"][1])
+vim.cmd([[hi DiagnosticSignInfo guifg=]] .. palette["green"][1])
+vim.cmd([[hi DiagnosticSignHint guifg=]] .. palette["aqua"][1])
