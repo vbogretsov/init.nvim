@@ -18,10 +18,19 @@ vim.cmd[[hi clear FloatBorder]]
 vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
 vim.fn.sign_define("DiagnosticSignInfo", {text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
 
 vim.fn["my#get_palette"] = function ()
   local background = vim.g.everforest_background
   local configuration = vim.fn["everforest#get_configuration"]()
   return vim.fn["everforest#get_palette"](background, configuration)
 end
+
+-- TODO: override hint and info hl groups
+-- local palette = vim.fn["my#get_palette"]()
+-- vim.cmd[[hi clear DiagnosticInfo]]
+-- vim.cmd([[hi DiagnosticInfo guifg=red]])
+-- vim.cmd([[hi DiagnosticInfo guifg=red]] .. palette["green"][1])
+-- vim.cmd[[hi clear DiagnosticHint]]
+-- vim.cmd([[hi DiagnosticHint guifg=red]])
+-- vim.cmd([[hi DiagnosticHint guifg=red]] .. palette["aqua"][1])

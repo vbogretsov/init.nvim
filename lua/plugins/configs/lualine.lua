@@ -18,8 +18,8 @@ return require("lualine").setup {
       diagnostics_color = {
         error = { fg = palette["red"][1] },
         warn  = { fg = palette["yellow"][1] },
-        info  = { fg = palette["aqua"][1] },
-        hint  = { fg = palette["grey0"][1] },
+        info  = { fg = palette["green"][1] },
+        hint  = { fg = palette["aqua"][1] },
       },
       symbols = { error = " ", warn = " ", info = " ", hint = "" },
     }},
