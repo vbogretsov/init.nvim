@@ -131,6 +131,7 @@ require("neo-tree").setup({
         "node_modules",
         ".cache",
         ".idea",
+        ".venv",
       },
       hide_by_pattern = { -- uses glob style patterns
         --"*.meta",

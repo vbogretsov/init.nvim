@@ -1,3 +1,6 @@
+local background = "#2b3339"
+
+
 require("bufferline").setup {
   options = {
     numbers = function(opts)
@@ -29,22 +32,22 @@ require("bufferline").setup {
   },
   highlights = {
     fill = {
-      bg = "#2b3339",
+      bg = background,
     },
     separator = {
-      bg = "#2b3339",
+      bg = background,
     },
     modified = {
-      bg = "#2b3339",
+      bg = background,
     },
     background = {
-      bg = "#2b3339",
+      bg = background,
     },
     close_button = {
-      bg = "#2b3339",
+      bg = background,
     },
     numbers = {
-      bg = "#2b3339",
+      bg = background,
     },
     numbers_selected = {
       bold = true,

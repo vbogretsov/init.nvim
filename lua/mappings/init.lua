@@ -52,8 +52,8 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("x", "K", ":move -2<CR>gv-gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", "J", ":move +1<CR>gv-gv", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "U", "<C-u>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "D", "<C-d>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "U", "<C-u>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "D", "<C-d>", { noremap = true, silent = true })
 
 -- Clipboard
 vim.api.nvim_set_keymap("v", "y", "y:call ClipboardYank()<CR>", { silent = true })
@@ -66,14 +66,14 @@ vim.api.nvim_set_keymap("n", "p", "p:call ClipboardPaste()<CR>", { silent = true
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>NvimTreeToggle<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>NvimTreeFindFile<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree toggle current<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>Neotree float reveal<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Neotree float reveal<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Neotree float<CR>", { noremap = true })
 
 -- Focus window
-vim.api.nvim_set_keymap("n", "<leader>h", ":FocusSplitLeft<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>j", ":FocusSplitDown<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>k", ":FocusSplitUp<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<leader>l", ":FocusSplitRight<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>h", ":FocusSplitLeft<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>j", ":FocusSplitDown<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>k", ":FocusSplitUp<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>l", ":FocusSplitRight<CR>", { silent = true })
 
 -- Navigation
 vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
