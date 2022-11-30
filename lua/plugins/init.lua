@@ -135,7 +135,11 @@ return packer.startup(function()
     commit   = "d5fee69",
     cmd      = "MyPlugInit",
     requires = {
-      "nvim-telescope/telescope-fzf-native.nvim",
+      {
+         "nvim-telescope/telescope-fzf-native.nvim",
+         commit = "6791f74",
+         run    = "make",
+      },
     },
   }
 
@@ -272,8 +276,8 @@ return packer.startup(function()
 
   use {
     "gpanders/editorconfig.nvim",
-    tag = "7d10fe6",
-    cmd = "MyPlugInit",
+    commit = "7d10fe6",
+    cmd    = "MyPlugInit",
   }
 
   -- use {
