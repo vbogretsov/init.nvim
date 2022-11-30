@@ -8,6 +8,18 @@ local use = packer.use
 
 return packer.startup(function()
 
+  local telescope_fzf_native = {
+     "nvim-telescope/telescope-fzf-native.nvim",
+     commit = "6791f74",
+     run    = "make",
+  }
+
+  local telescope_ui_select = {
+    "nvim-telescope/telescope-ui-select.nvim",
+    commit = "62ea5e5",
+  }
+
+
   -- this is arranged on the basis of when a plugin starts
   use {
     "wbthomason/packer.nvim",
@@ -135,11 +147,7 @@ return packer.startup(function()
     commit   = "d5fee69",
     cmd      = "MyPlugInit",
     requires = {
-      {
-         "nvim-telescope/telescope-fzf-native.nvim",
-         commit = "6791f74",
-         run    = "make",
-      },
+      telescope_fzf_native,
     },
   }
 
@@ -152,15 +160,8 @@ return packer.startup(function()
     config    = "require'plugins.configs.telescope'",
     requires  = {
       "nvim-lua/plenary.nvim",
-      {
-         "nvim-telescope/telescope-fzf-native.nvim",
-         commit = "6791f74",
-         run    = "make",
-      },
-      {
-         "nvim-telescope/telescope-ui-select.nvim",
-         commit = "62ea5e5",
-      }
+      telescope_fzf_native,
+      telescope_ui_select,
     },
   }
 
