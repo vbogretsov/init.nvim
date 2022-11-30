@@ -208,6 +208,8 @@ require("neo-tree").setup({
 
 local palette = vim.fn["my#get_palette"]()
 
+vim.cmd([[hi! clear NeoTreeNormal]])
+vim.cmd([[hi! clear NeoTreeEndOfBuffer]])
 vim.cmd([[hi clear NeoTreeFloatBorder]])
 vim.cmd([[hi clear NeoTreeGitUntracked]])
 vim.cmd([[hi clear NeoTreeRootName]])
@@ -218,7 +220,6 @@ vim.cmd([[hi NeoTreeGitUnstaged guifg=NONE guibg=NONE]])
 vim.cmd([[hi NeoTreeGitStaged guifg=NONE guibg=NONE]])
 vim.cmd([[hi NeoTreeDirectoryIcon guifg=]] .. palette["orange"][1])
 vim.cmd([[hi NeoTreeGitModified guifg=]] .. palette["yellow"][1])
-
 
 -- vim.cmd([[hi NeoTreeGitAdded guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitConflict guifg=NONE guibg=NONE]])
