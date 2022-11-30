@@ -135,7 +135,11 @@ return packer.startup(function()
     commit   = "d5fee69",
     cmd      = "MyPlugInit",
     requires = {
-      "nvim-telescope/telescope-fzf-native.nvim",
+      {
+         "nvim-telescope/telescope-fzf-native.nvim",
+         commit = "6791f74",
+         run    = "make",
+      },
     },
   }
 
