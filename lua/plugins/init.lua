@@ -49,7 +49,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "9061e2d",
+    commit = "189ad37",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -118,7 +118,7 @@ return packer.startup(function()
   -- Comments
   use {
     "b3nj5m1n/kommentary",
-    commit = "533d768",
+    commit = "981d567",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.kommentary'",
   }
@@ -167,8 +167,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    -- commit = "8fe4e36",
     commit = "3256eb2",
-    -- commit = "3eb6577",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -276,7 +276,7 @@ return packer.startup(function()
 
   use {
     "gpanders/editorconfig.nvim",
-    commit = "7d10fe6",
+    commit = "2af8809",
     cmd    = "MyPlugInit",
   }
 
