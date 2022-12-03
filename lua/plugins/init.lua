@@ -155,7 +155,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "3c2e5fb",
+    commit    = "cabf991",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
