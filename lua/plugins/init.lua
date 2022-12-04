@@ -168,8 +168,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "4b90052",
-    -- commit = "3eb6577",
+    -- commit = "4b90052",
+    commit = "9bfd425",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -241,7 +241,7 @@ return packer.startup(function()
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    commit = "d346335",
+    commit = "ac132be",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
