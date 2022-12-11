@@ -110,6 +110,7 @@ return packer.startup(function()
     tag    = "v2.20.2",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
+    after  = "nvim-treesitter",
   }
 
   -- Autopairs

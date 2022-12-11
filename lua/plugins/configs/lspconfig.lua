@@ -90,12 +90,32 @@ lsp.sumneko_lua.setup {
 }
 
 -- Rust
-lsp.rls.setup {
+-- lsp.rls.setup {
+--   settings = {
+--     rust = {
+--       build_on_save = true,
+--       all_features  = true,
+--     },
+--   },
+-- }
+
+lsp.rust_analyzer.setup({
   settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save     = false,
-      all_features      = true,
-    },
-  },
-}
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+    }
+  }
+})
