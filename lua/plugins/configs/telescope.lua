@@ -36,6 +36,8 @@ require("telescope").setup {
      "--line-number",
      "--column",
      "--smart-case",
+     "--glob=!.venv/*",
+     "--glob=!.git/*",
     },
     prompt_prefix = "   ",
     layout_strategy = "vertical",
