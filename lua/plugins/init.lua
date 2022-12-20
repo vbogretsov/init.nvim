@@ -19,7 +19,6 @@ return packer.startup(function()
     commit = "62ea5e5",
   }
 
-
   -- this is arranged on the basis of when a plugin starts
   use {
     "wbthomason/packer.nvim",
@@ -31,6 +30,7 @@ return packer.startup(function()
   use {
     "sainnhe/everforest",
     commit = "06fda35",
+    -- commit = "8c1f892",
   }
 
   -- Proper buffer deletion

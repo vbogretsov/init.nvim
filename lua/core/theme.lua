@@ -12,7 +12,7 @@ vim.cmd[[colorscheme everforest]]
 vim.cmd[[hi clear FocusedSymbol ]]
 -- Temporary hack after update
 vim.cmd[[hi clear Comment ]]
-vim.cmd[[hi clear FloatBorder]]
+-- vim.cmd[[hi clear FloatBorder]]
 
 vim.fn.sign_define("DiagnosticSignError", {text = " ", texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn", {text = " ", texthl = "DiagnosticSignWarn"})
@@ -29,3 +29,5 @@ local palette = vim.fn["my#get_palette"]()
 vim.cmd([[hi Comment guifg=]] .. palette["grey1"][1])
 vim.cmd([[hi DiagnosticSignInfo guifg=]] .. palette["green"][1])
 vim.cmd([[hi DiagnosticSignHint guifg=]] .. palette["aqua"][1])
+
+vim.cmd([[hi FloatBorder guifg=]] .. palette["bg4"][1] .. [[ guibg=]] .. palette["bg0"][1])
