@@ -36,7 +36,7 @@ return packer.startup(function()
   -- Proper buffer deletion
   use {
     "famiu/bufdelete.nvim",
-    commit = "3ebf4a9",
+    commit = "f79e9d1",
     cmd    = "MyPlugInit",
   }
 
@@ -49,7 +49,7 @@ return packer.startup(function()
   -- Scrollbar
   use {
     "petertriho/nvim-scrollbar",
-    commit  = "2cb0a0b",
+    commit  = "f45aecb",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
     requires = {
@@ -61,7 +61,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "189ad37",
+    commit = "05e1072",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -69,7 +69,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "bfa0d99",
+    commit    = "32a7382",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -78,7 +78,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "4ecfa81",
+    commit   = "c7492a7",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -86,8 +86,9 @@ return packer.startup(function()
 
   -- File browser
   use {
-    "nvim-neo-tree/neo-tree.nvim",
-    commit    = "7c6903b",
+    -- "nvim-neo-tree/neo-tree.nvim",
+    "vbogretsov/neo-tree.nvim",
+    commit    = "2cc77f7",
     cmd       = "MyPlugInit",
     config    = "require'plugins.configs.neotree'",
     requires  = {
@@ -116,7 +117,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "99f6963",
+    commit  = "03580d7",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -156,7 +157,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "cabf991",
+    commit    = "a606bd1",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -169,8 +170,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "4b90052",
-    commit = "9bfd425",
+    commit = "fb36ed4",
+    -- commit = "9bfd425",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -184,7 +185,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "93f385c",
+    commit   = "e55033f",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
   }
@@ -203,7 +204,7 @@ return packer.startup(function()
 
   use {
     "hrsh7th/vim-vsnip",
-    commit = "e44026b",
+    commit = "8dde8c0",
     after  = "cmp-vsnip",
   }
 
@@ -242,7 +243,7 @@ return packer.startup(function()
   -- LSP
   use {
     "neovim/nvim-lspconfig",
-    commit = "ac132be",
+    commit = "d066a47",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
@@ -250,7 +251,7 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "d076301",
+    commit = "2ab3bdf",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
@@ -265,7 +266,7 @@ return packer.startup(function()
 
   use {
     "akinsho/toggleterm.nvim",
-    commit = "3ba6838",
+    commit = "b02a167",
     config = "require'plugins.configs.toggleterm'",
     keys   = "<c-\\>",
   }

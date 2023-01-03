@@ -1,4 +1,5 @@
 require("neo-tree").setup({
+  log_level = "trace",
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
   enable_git_status = true,
@@ -12,9 +13,19 @@ require("neo-tree").setup({
   --           return a.type > b.type
   --       end
   --   end , -- this sorts files and directories descendantly
+  event_handlers = {
+    {
+      event = "neo_tree_buffer_enter",
+      handler = function ()
+        vim.cmd [[setl cc=0]]
+      end
+    },
+  },
   default_component_configs = {
     container = {
-      enable_character_fade = true
+      enable_character_fade = true,
+      width = "100%",
+      right_padding = 0,
     },
     indent = {
       indent_size = 2,
@@ -65,8 +76,9 @@ require("neo-tree").setup({
     },
   },
   window = {
-    position = "left",
-    width = 40,
+    position = "current",
+    width = "100%",
+    auto_expand_width = true,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -208,18 +220,20 @@ require("neo-tree").setup({
 
 local palette = vim.fn["my#get_palette"]()
 
-vim.cmd([[hi! clear NeoTreeNormal]])
-vim.cmd([[hi! clear NeoTreeEndOfBuffer]])
-vim.cmd([[hi clear NeoTreeFloatBorder]])
 vim.cmd([[hi clear NeoTreeGitUntracked]])
 vim.cmd([[hi clear NeoTreeRootName]])
-vim.cmd([[hi NeoTreeFloatTitle guibg=NONE]])
-vim.cmd([[hi NeoTreeTitleBar guibg=NONE]])
 vim.cmd([[hi NeoTreeGitUntracked guifg=]] ..  palette["aqua"][1])
 vim.cmd([[hi NeoTreeGitUnstaged guifg=NONE guibg=NONE]])
 vim.cmd([[hi NeoTreeGitStaged guifg=NONE guibg=NONE]])
 vim.cmd([[hi NeoTreeDirectoryIcon guifg=]] .. palette["orange"][1])
 vim.cmd([[hi NeoTreeGitModified guifg=]] .. palette["yellow"][1])
+vim.cmd([[hi NeoTreeFloatBorder guifg=]] .. palette["bg2"][1] .. [[ guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeFloatTitle guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeFloatNormal guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeTitleBar guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeNormal guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeEndOfBuffer guibg=]] .. palette["bg0"][1])
+vim.cmd([[hi NeoTreeFilterTerm guibg=]] .. palette["bg0"][1])
 
 -- vim.cmd([[hi NeoTreeGitAdded guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitConflict guifg=NONE guibg=NONE]])
@@ -252,7 +266,6 @@ vim.cmd([[hi NeoTreeGitModified guifg=]] .. palette["yellow"][1])
 -- vim.cmd([[ hi clear NeoTreeGitUnstaged ]])
 -- vim.cmd([[ hi clear NeoTreeHiddenByName ]])
 -- vim.cmd([[ hi clear NeoTreeIndentMarker ]])
--- vim.cmd([[ hi clear NeoTreeMessage ]])
 -- vim.cmd([[ hi clear NeoTreeModified ]])
 -- vim.cmd([[ hi clear NeoTreeNormal ]])
 -- vim.cmd([[ hi clear NeoTreeNormalNC ]])

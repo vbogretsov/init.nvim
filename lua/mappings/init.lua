@@ -66,9 +66,9 @@ vim.api.nvim_set_keymap("n", "p", "p:call ClipboardPaste()<CR>", { silent = true
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>NvimTreeToggle<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>NvimTreeFindFile<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree toggle current<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree left<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Neotree float reveal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Neotree float<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree left<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Neotree current reveal<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Neotree current<CR>", { noremap = true })
 
 -- Focus window
 -- vim.api.nvim_set_keymap("n", "<leader>h", ":FocusSplitLeft<CR>", { silent = true })
