@@ -4,6 +4,7 @@ require("nvim-treesitter.configs").setup {
     enable           = true,
     use_languagetree = true,
   },
+  ignore_install = { "t32" },
   indent = {
     enable  = true,
     disable = {
