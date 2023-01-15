@@ -242,8 +242,7 @@ return packer.startup(function()
 
   -- LSP
   use {
-    "neovim/nvim-lspconfig",
-    commit = "ed88435",
+    "vbogretsov/nvim-lspconfig",
     after  = "cmp-nvim-lsp",
     config = "require'plugins.configs.lspconfig'",
   }
