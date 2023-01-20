@@ -62,6 +62,9 @@ vim.api.nvim_set_keymap("v", "x", "x:call ClipboardYank()<CR>", { silent = true 
 vim.api.nvim_set_keymap("v", "p", "p:call ClipboardPaste()<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "p", "p:call ClipboardPaste()<CR>", { silent = true })
 
+vim.api.nvim_set_keymap("i", "<D-v>", "<esc>pa", { silent = true })
+vim.api.nvim_set_keymap("n", "<D-v>", "p", { silent = true })
+
 -- File tree
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>NvimTreeToggle<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>;", "<cmd>NvimTreeFindFile<CR>", { noremap = true })

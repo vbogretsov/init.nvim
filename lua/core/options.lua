@@ -78,6 +78,7 @@ vim.g.loaded_python_provider   = 1
 -- neovide
 if vim.fn.exists("g:neovide") then
   vim.o.guifont="SF Mono"
+  vim.g.neovide_input_use_logo = true
   vim.g.neovide_scroll_animation_length = 0
   vim.g.neovide_cursor_trail_size = 0
   vim.g.neovide_cursor_vfx_mode = ""
