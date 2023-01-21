@@ -235,6 +235,7 @@ vim.cmd([[hi NeoTreeNormal guibg=]] .. palette["bg0"][1])
 vim.cmd([[hi NeoTreeEndOfBuffer guibg=]] .. palette["bg0"][1])
 vim.cmd([[hi NeoTreeFilterTerm guibg=]] .. palette["bg0"][1])
 
+-- vim.cmd([[hi FloatBorder guifg=]] .. palette["bg4"][1] .. [[ guibg=]] .. palette["bg0"][1])
 -- vim.cmd([[hi NeoTreeGitAdded guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitConflict guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitDeleted guifg=NONE guibg=NONE]])

@@ -28,4 +28,5 @@ local palette = vim.fn["my#get_palette"]()
 vim.cmd([[hi Comment guifg=]] .. palette["grey1"][1])
 vim.cmd([[hi DiagnosticSignInfo guifg=]] .. palette["green"][1])
 vim.cmd([[hi DiagnosticSignHint guifg=]] .. palette["aqua"][1])
+
 -- vim.cmd([[hi FloatBorder guifg=]] .. palette["bg2"][1] .. [[ guibg=]] .. palette["bg0"][1])

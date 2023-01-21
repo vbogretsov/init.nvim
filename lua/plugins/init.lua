@@ -19,7 +19,6 @@ return packer.startup(function()
     commit = "62ea5e5",
   }
 
-
   -- this is arranged on the basis of when a plugin starts
   use {
     "wbthomason/packer.nvim",
