@@ -48,11 +48,17 @@ lsp.pyright.setup {
   capabilities = caps,
 }
 
+-- npm install -g typescript typescript-language-server
+lsp.tsserver.setup{
+  capabilities = caps,
+}
+
 -- JSON
--- lsp.jsonls.setup{
---   cmd = { "vscode-json-languageserver", "--stdio" },
---   capabilities = caps,
--- }
+-- npm i -g vscode-json-languageserver
+lsp.jsonls.setup{
+  cmd = { "vscode-json-languageserver", "--stdio" },
+  capabilities = caps,
+}
 
 -- YAML
 lsp.yamlls.setup{
@@ -90,12 +96,33 @@ lsp.yamlls.setup{
 -- }
 
 -- Rust
-lsp.rls.setup {
+-- lsp.rls.setup {
+--   settings = {
+--     rust = {
+--       build_on_save = true,
+--       all_features  = true,
+--     },
+--   },
+-- }
+
+lsp.rust_analyzer.setup({
   settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save     = false,
-      all_features      = true,
-    },
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+    }
   },
-}
+  capabilities = caps,
+})

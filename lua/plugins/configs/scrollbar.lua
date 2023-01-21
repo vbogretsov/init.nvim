@@ -3,6 +3,7 @@ local palette = vim.fn["my#get_palette"]()
 
 require("scrollbar").setup({
   marks = {
+    Cursor = { color = palette["bg0"][1] },
     Search = { color = palette["fg"][1] },
     Error = { color = palette["red"][1] },
     Warn = { color = palette["yellow"][1] },
@@ -13,6 +14,15 @@ require("scrollbar").setup({
   handlers = {
     diagnostic = true,
     search     = true,
+  },
+  excluded_buftypes = {
+    "terminal",
+  },
+  excluded_filetypes = {
+    "prompt",
+    "TelescopePrompt",
+    "noice",
+    "neo-tree",
   },
 })
 
