@@ -273,5 +273,12 @@ return packer.startup(function()
     cmd = "MyPlugInit",
   }
 
+  use {
+    "akinsho/toggleterm.nvim",
+    commit = "a54e6c4",
+    cmd    = "MyPlugInit",
+    config = "require'plugins.configs.toggleterm'",
+  }
+
 end)
 

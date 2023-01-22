@@ -1,11 +1,16 @@
+local gui = vim.fn.exists("g:neovide") == 1
+
+
 require("toggleterm").setup {
-  size            = 15,
+  size            = gui and 20 or 15,
   open_mapping    = [[<c-\>]],
   shade_filetypes = {},
   shade_terminals = false,
   start_in_insert = true,
   persist_size    = true,
-  direction       = "float",
+  -- direction       = "float",
+  -- direction       = "horizontal",
+  direction       = gui and "horizontal" or "float",
   float_opts = {
     border = "single",
     highlights = {
