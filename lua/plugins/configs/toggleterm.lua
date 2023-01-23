@@ -3,7 +3,8 @@ local gui = vim.fn.exists("g:neovide") == 1
 
 require("toggleterm").setup {
   size            = gui and 20 or 15,
-  open_mapping    = [[<c-\>]],
+  -- open_mapping    = [[<c-\>]],
+  open_mapping    = [[`]],
   shade_filetypes = {},
   shade_terminals = false,
   start_in_insert = true,
