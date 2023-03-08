@@ -71,6 +71,7 @@ return packer.startup(function()
     commit    = "0050b30",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
+    -- cmd       = "MyPlugInit",
     requires  = "nvim-web-devicons",
   }
 

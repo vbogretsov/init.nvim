@@ -57,10 +57,14 @@ lsp.tsserver.setup{
 -- npm i -g vscode-json-languageserver
 lsp.jsonls.setup{
   cmd = { "vscode-json-languageserver", "--stdio" },
+  init_options = {
+    provideFormatter = true
+  },
   capabilities = caps,
 }
 
 -- YAML
+-- npm i -g yaml-language-server
 lsp.yamlls.setup{
   capabilities = caps,
 }

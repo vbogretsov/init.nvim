@@ -11,6 +11,11 @@ vim.api.nvim_set_keymap("n", "<ESC>", ":noh<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>s", ":w<CR>", { noremap = true })
 vim.api.nvim_set_keymap("v", "q", "<ESC>", { noremap = true })
 
+-- TASKS
+vim.api.nvim_set_keymap("n", "TN", "i<C-k>OS", { noremap = true })
+vim.api.nvim_set_keymap("n", "TD", "r<C-k>OK", { noremap = true })
+vim.api.nvim_set_keymap("n", "TC", "r<C-k>XX", { noremap = true })
+
 -- Trim trailing whitespaces
 vim.api.nvim_set_keymap("n", "<leader>x", ":%s/\\s\\+$//<CR>", { noremap = true })
 
