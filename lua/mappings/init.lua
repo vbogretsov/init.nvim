@@ -90,6 +90,7 @@ vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { nor
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "<cmd>Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "T", "<cmd>Telescope grep_string only_sort_text=true<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>Telescope lsp_type_definitions<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>Telescope lsp_references<CR>", { noremap = true })
