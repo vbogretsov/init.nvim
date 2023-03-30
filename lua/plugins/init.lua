@@ -281,5 +281,13 @@ return packer.startup(function()
     config = "require'plugins.configs.toggleterm'",
   }
 
+  -- Markdown preview
+  use {
+    "toppair/peek.nvim",
+    commit = "571f14c",
+    run    = "deno task --quiet build:fast",
+    config = "require'plugins.configs.peek'",
+  }
+
 end)
 

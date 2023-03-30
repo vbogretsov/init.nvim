@@ -20,6 +20,16 @@ lsp.terraformls.setup {
   capabilities = caps,
 }
 
+-- Docker Compose
+lsp.docker_compose_language_service.setup{
+capabilities = caps,
+}
+
+-- Docker
+lsp.dockerls.setup{
+  capabilities = caps,
+}
+
 -- Python
 local function detect_python()
   local venvdir = ".venv"
