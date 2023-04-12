@@ -10,13 +10,23 @@ return packer.startup(function()
 
   local telescope_fzf_native = {
      "nvim-telescope/telescope-fzf-native.nvim",
-     commit = "fab3e22",
+     commit = "580b6c4",
      run    = "make",
   }
 
   local telescope_ui_select = {
     "nvim-telescope/telescope-ui-select.nvim",
     commit = "62ea5e5",
+  }
+
+  local cmp_under_cursor = {
+    "lukas-reineke/cmp-under-comparator",
+    commit = "6857f10",
+  }
+
+  local lspkind = {
+    "onsails/lspkind.nvim",
+    commit = "c68b3a0",
   }
 
   -- this is arranged on the basis of when a plugin starts
@@ -35,7 +45,7 @@ return packer.startup(function()
   -- Proper buffer deletion
   use {
     "famiu/bufdelete.nvim",
-    commit = "f79e9d1",
+    commit = "8933abc",
     cmd    = "MyPlugInit",
   }
 
@@ -48,7 +58,7 @@ return packer.startup(function()
   -- Scrollbar
   use {
     "petertriho/nvim-scrollbar",
-    commit  = "6a2065f",
+    commit  = "f85b298",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
     requires = {
@@ -60,7 +70,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "9ca185e",
+    commit = "4ec26d6",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -68,17 +78,16 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "0050b30",
+    commit    = "84ffb80",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
-    -- cmd       = "MyPlugInit",
     requires  = "nvim-web-devicons",
   }
 
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "c7492a7",
+    commit   = "ef4fdc5",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -107,7 +116,7 @@ return packer.startup(function()
   -- Indent balnk lines
   use {
     "lukas-reineke/indent-blankline.nvim",
-    tag    = "v2.20.2",
+    tag    = "v2.20.4",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
     after  = "nvim-treesitter",
@@ -116,7 +125,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "31042a5",
+    commit  = "7470af8",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -156,7 +165,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "2f32775",
+    commit    = "6258d50",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -170,7 +179,7 @@ return packer.startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     -- commit = "fb36ed4",
-    commit = "0cf5135",
+    commit = "ac4020c",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -186,14 +195,18 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "11a9579",
+    commit   = "777450f",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
+    requires  = {
+      cmp_under_cursor,
+      lspkind,
+    }
   }
 
   use {
     "hrsh7th/cmp-nvim-lsp",
-    commit = "5922477",
+    commit = "0e6b2ed",
     after  = "nvim-cmp",
   }
 
@@ -229,14 +242,14 @@ return packer.startup(function()
 
   use {
     "tzachar/cmp-fuzzy-buffer",
-    commit  = "471949d",
+    commit  = "ada6352",
     after   = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
 
   use {
     "tzachar/cmp-fuzzy-path",
-    commit   = "28735ce",
+    commit   = "0caa348",
     after    = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
@@ -244,14 +257,14 @@ return packer.startup(function()
   -- LSP
   use {
     "vbogretsov/nvim-lspconfig",
-    after  = "cmp-nvim-lsp",
-    config = "require'plugins.configs.lspconfig'",
+    after    = "cmp-nvim-lsp",
+    config   = "require'plugins.configs.lspconfig'",
   }
 
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "7b37bd5",
+    commit = "372d5cb",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }

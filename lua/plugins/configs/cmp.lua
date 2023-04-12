@@ -1,4 +1,6 @@
 local cmp = require("cmp")
+local cmp_under_comparator = require("cmp-under-comparator")
+local lspkind = require("lspkind")
 
 cmp.setup {
   sources = {
@@ -25,6 +27,23 @@ cmp.setup {
     }),
     ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s", "c" }),
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s", "c" }),
+  },
+  comparators = {
+    cmp.config.compare.offset,
+    cmp.config.compare.exact,
+    cmp.config.compare.score,
+    cmp_under_comparator.under,
+    cmp.config.compare.kind,
+    cmp.config.compare.sort_text,
+    cmp.config.compare.length,
+    cmp.config.compare.order,
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode          = "symbol",
+      maxwidth      = 60,
+      ellipsis_char = '...',
+    }),
   },
 }
 
