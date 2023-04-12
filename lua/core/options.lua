@@ -1,6 +1,7 @@
 local tabsize = 4
 
--- vim.cmd[[ filetype plugin indent on ]]
+vim.cmd[[filetype on]]
+vim.cmd[[filetype plugin indent on]]
 vim.o.background        = "dark"
 vim.o.shortmess         = 'atIW'
 vim.o.hidden            = true

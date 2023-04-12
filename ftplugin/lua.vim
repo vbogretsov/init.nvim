@@ -1,2 +1,2 @@
-setl softtabstop=2
-setl shiftwidth=2
+setlocal softtabstop=2
+setlocal shiftwidth=2

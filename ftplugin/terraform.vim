@@ -1,3 +1,3 @@
-setl softtabstop=2
-setl shiftwidth=2
-setl commentstring=#\ %s
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal commentstring=#\ %s

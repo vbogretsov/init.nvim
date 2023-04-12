@@ -1,1 +1,1 @@
-setl cc=0
+setlocal cc=0
