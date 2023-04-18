@@ -21,6 +21,8 @@ require("bufferline").setup {
     indicator = {
       icon = " ",
     },
+    buffer_close_icon = '',
+    modified_icon = '●',
     close_command           = "Bdelete! %d",
     diagnostics             = false,
     show_buffer_close_icons = true,
