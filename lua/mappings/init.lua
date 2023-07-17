@@ -89,6 +89,7 @@ vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR
 vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>j", "<cmd>Telescope jumplist<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "F", "<cmd>Telescope live_grep<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "T", "<cmd>Telescope grep_string only_sort_text=true<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>Telescope lsp_definitions<CR>", { noremap = true })
@@ -146,4 +147,4 @@ function _G.Toggle_venn()
     end
 end
 -- toggle keymappings for venn using <leader>v
--- vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR>", { noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>v', ":lua Toggle_venn()<CR>", { noremap = true})
