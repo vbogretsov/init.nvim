@@ -1,4 +1,6 @@
-local background = "#2b3339"
+local palette = vim.fn["my#get_palette"]()
+
+local background = palette["bg_dim"][1]
 
 
 require("bufferline").setup {

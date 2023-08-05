@@ -9,9 +9,9 @@ local use = packer.use
 return packer.startup(function()
 
   local telescope_fzf_native = {
-     "nvim-telescope/telescope-fzf-native.nvim",
-     commit = "580b6c4",
-     run    = "make",
+    "nvim-telescope/telescope-fzf-native.nvim",
+    commit = "9bc8237",
+    run    = "make",
   }
 
   local telescope_ui_select = {
@@ -26,26 +26,26 @@ return packer.startup(function()
 
   local lspkind = {
     "onsails/lspkind.nvim",
-    commit = "c68b3a0",
+    commit = "0eed47f",
   }
 
-  -- this is arranged on the basis of when a plugin starts
   use {
     "wbthomason/packer.nvim",
   }
 
-  -- this is the core repo containing utilities for some features like theme swticher, no need to lazy load
   use "nvim-lua/plenary.nvim"
 
   use {
     "sainnhe/everforest",
+    -- commit = "1db527e",
     commit = "721c16b",
+    -- commit = "83a4361",
   }
 
   -- Proper buffer deletion
   use {
     "famiu/bufdelete.nvim",
-    commit = "8933abc",
+    commit = "07d1f8b",
     cmd    = "MyPlugInit",
   }
 
@@ -58,12 +58,12 @@ return packer.startup(function()
   -- Scrollbar
   use {
     "petertriho/nvim-scrollbar",
-    commit  = "f85b298",
+    commit  = "35f99d5",
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
     requires = {
       "kevinhwang91/nvim-hlslens",
-      commit = "fc83bd5",
+      commit = "5e3e908",
     },
   }
 
@@ -78,7 +78,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "84ffb80",
+    commit    = "45e27ca",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -87,7 +87,7 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "ef4fdc5",
+    commit   = "99f0932",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -108,7 +108,7 @@ return packer.startup(function()
   -- Color column
   use {
     "lukas-reineke/virt-column.nvim",
-    tag    = "v1.5.5",
+    tag    = "v1.5.6",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.colorcolumn'",
   }
@@ -116,7 +116,7 @@ return packer.startup(function()
   -- Indent balnk lines
   use {
     "lukas-reineke/indent-blankline.nvim",
-    tag    = "v2.20.4",
+    tag    = "v2.20.7",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
     after  = "nvim-treesitter",
@@ -125,7 +125,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "7470af8",
+    commit  = "ae5b41c",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -154,7 +154,7 @@ return packer.startup(function()
 
   use {
     "tzachar/fuzzy.nvim",
-    commit   = "04b3d96",
+    commit   = "67a42ad",
     cmd      = "MyPlugInit",
     requires = {
       telescope_fzf_native,
@@ -165,7 +165,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "6258d50",
+    commit    = "d2e17ba",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -178,8 +178,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "fb36ed4",
-    commit = "ac4020c",
+    commit = "46ddea9",
+    -- commit = "ac4020c",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -195,7 +195,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "777450f",
+    commit   = "c4e491a",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
     requires  = {
@@ -206,7 +206,7 @@ return packer.startup(function()
 
   use {
     "hrsh7th/cmp-nvim-lsp",
-    commit = "0e6b2ed",
+    commit = "44b16d1",
     after  = "nvim-cmp",
   }
 
@@ -218,7 +218,7 @@ return packer.startup(function()
 
   use {
     "hrsh7th/vim-vsnip",
-    commit = "8dde8c0",
+    commit = "7753ba9",
     after  = "cmp-vsnip",
   }
 
@@ -237,12 +237,13 @@ return packer.startup(function()
   use {
     "hrsh7th/cmp-cmdline",
     commit = "c66c379",
+    -- commit = "8ee981b",
     after  = "nvim-cmp"
   }
 
   use {
     "tzachar/cmp-fuzzy-buffer",
-    commit  = "ada6352",
+    commit  = "5da5f20",
     after   = "nvim-cmp",
     requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
   }
@@ -264,21 +265,21 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "372d5cb",
+    commit = "5d73da7",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
+  }
+
+  use {
+    "akinsho/git-conflict.nvim",
+    commit = "3c89812",
+    config = "require'plugins.configs.gitconflict'",
   }
 
   use {
     "dhruvasagar/vim-table-mode",
     tag = "v4.7.6.1",
     cmd = "TableModeEnable",
-  }
-
-  use {
-    "gpanders/editorconfig.nvim",
-    commit = "5b9e303",
-    cmd    = "MyPlugInit",
   }
 
   use {
@@ -289,7 +290,7 @@ return packer.startup(function()
 
   use {
     "akinsho/toggleterm.nvim",
-    commit = "a54e6c4",
+    commit = "12cba0a",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.toggleterm'",
   }
@@ -297,7 +298,7 @@ return packer.startup(function()
   -- Markdown preview
   use {
     "toppair/peek.nvim",
-    commit = "571f14c",
+    commit = "67752e7",
     run    = "deno task --quiet build:fast",
     config = "require'plugins.configs.peek'",
   }

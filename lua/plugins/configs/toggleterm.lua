@@ -1,5 +1,6 @@
 local gui = vim.fn.exists("g:neovide") == 1
 
+local palette = vim.fn["my#get_palette"]()
 
 require("toggleterm").setup {
   size            = gui and 20 or 15,
@@ -9,13 +10,15 @@ require("toggleterm").setup {
   shade_terminals = false,
   start_in_insert = true,
   persist_size    = true,
-  -- direction       = "float",
+  direction       = "float",
   -- direction       = "horizontal",
-  direction       = gui and "horizontal" or "float",
+  -- direction       = gui and "horizontal" or "float",
   float_opts = {
     border = "single",
-    highlights = {
-      border = "Normal",
+  },
+  highlights = {
+    FloatBorder = {
+      guifg = palette["bg3"][1],
     },
   },
 }

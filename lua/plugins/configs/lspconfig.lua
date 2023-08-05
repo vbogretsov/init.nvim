@@ -12,6 +12,14 @@ lsp.clangd.setup{
 -- requires gopls
 lsp.gopls.setup {
   capabilities = caps,
+  filetypes = {
+    "go",
+    "gomod",
+    "gowork",
+    "gotmpl",
+  },
+  root_dir = util.root_pattern("go.mod", ".git"),
+  single_file_support = true
 }
 -- Terraform
 -- requires terraform-ls
@@ -22,7 +30,7 @@ lsp.terraformls.setup {
 
 -- Docker Compose
 lsp.docker_compose_language_service.setup{
-capabilities = caps,
+  capabilities = caps,
 }
 
 -- Docker

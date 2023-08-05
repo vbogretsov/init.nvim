@@ -28,6 +28,7 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s", "c" }),
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s", "c" }),
   },
+
   comparators = {
     cmp.config.compare.offset,
     cmp.config.compare.exact,
@@ -45,17 +46,31 @@ cmp.setup {
       ellipsis_char = '...',
     }),
   },
+  window = {
+    completion = {
+      -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      side_padding = 1,
+    },
+  },
+  view = {
+    entries = { name = "custom" },
+  },
 }
 
 cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = "cmdline" },
+    -- { name = "cmdline" },
     { name = "fuzzy_buffer" },
     { name = "buffer" },
   }
 })
 
 cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
+  view = {
+    entries = { name = "custom" },
+  },
   sources = cmp.config.sources({
     {
       name = "fuzzy_path",
