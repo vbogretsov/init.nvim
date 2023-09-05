@@ -70,7 +70,7 @@ return packer.startup(function()
   -- Icons
   use {
     "kyazdani42/nvim-web-devicons",
-    commit = "4ec26d6",
+    commit = "bc11ee2",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -96,7 +96,7 @@ return packer.startup(function()
   -- File browser
   use {
     "vbogretsov/neo-tree.nvim",
-    commit    = "2cc77f7",
+    commit    = "80dc74d",
     cmd       = "MyPlugInit",
     config    = "require'plugins.configs.neotree'",
     requires  = {
