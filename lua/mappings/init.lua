@@ -76,7 +76,7 @@ vim.api.nvim_set_keymap("n", "<D-v>", '"*p', { silent = true })
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree toggle current<CR>", { noremap = true })
 -- vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>Neotree left<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Neotree current reveal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Neotree current<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>Neotree<CR>", { noremap = true })
 
 -- Focus window
 -- vim.api.nvim_set_keymap("n", "<leader>h", ":FocusSplitLeft<CR>", { silent = true })

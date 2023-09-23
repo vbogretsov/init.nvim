@@ -10,7 +10,7 @@ return packer.startup(function()
 
   local telescope_fzf_native = {
     "nvim-telescope/telescope-fzf-native.nvim",
-    commit = "9bc8237",
+    commit = "6c921ca",
     run    = "make",
   }
 
@@ -26,7 +26,7 @@ return packer.startup(function()
 
   local lspkind = {
     "onsails/lspkind.nvim",
-    commit = "0eed47f",
+    commit = "57610d5",
   }
 
   use {
@@ -37,9 +37,7 @@ return packer.startup(function()
 
   use {
     "sainnhe/everforest",
-    -- commit = "1db527e",
-    commit = "721c16b",
-    -- commit = "83a4361",
+    commit = "83b6664",
   }
 
   -- Proper buffer deletion
@@ -64,13 +62,14 @@ return packer.startup(function()
     requires = {
       "kevinhwang91/nvim-hlslens",
       commit = "5e3e908",
+      config = "require'plugins.configs.hlslens'",
     },
   }
 
   -- Icons
   use {
-    "kyazdani42/nvim-web-devicons",
-    commit = "4ec26d6",
+    "nvim-tree/nvim-web-devicons",
+    commit = "b844d3d",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -95,9 +94,9 @@ return packer.startup(function()
 
   -- File browser
   use {
-    "vbogretsov/neo-tree.nvim",
-    commit    = "2cc77f7",
-    cmd       = "MyPlugInit",
+    "nvim-neo-tree/neo-tree.nvim",
+    commit    = "1424449",
+    cmd       = { "Neotree" },
     config    = "require'plugins.configs.neotree'",
     requires  = {
       "kyazdani42/nvim-web-devicons",
@@ -165,7 +164,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "d2e17ba",
+    commit    = "40c8d2f",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -178,8 +177,7 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "46ddea9",
-    -- commit = "ac4020c",
+    commit = "af6b3ec",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -195,7 +193,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "c4e491a",
+    commit   = "5dce1b7",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
     requires  = {
@@ -265,14 +263,14 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "5d73da7",
+    commit = "7de0125",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
 
   use {
     "akinsho/git-conflict.nvim",
-    commit = "3c89812",
+    commit = "8962619",
     config = "require'plugins.configs.gitconflict'",
   }
 
@@ -290,7 +288,7 @@ return packer.startup(function()
 
   use {
     "akinsho/toggleterm.nvim",
-    commit = "12cba0a",
+    commit = "0427b90",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.toggleterm'",
   }
@@ -304,4 +302,3 @@ return packer.startup(function()
   }
 
 end)
-

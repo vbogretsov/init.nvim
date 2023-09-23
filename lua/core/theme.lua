@@ -5,6 +5,7 @@ vim.cmd[[hi CursorLineNr ctermfg=White guifg=White]]
 vim.g.everforest_background = "soft"
 vim.g.everforest_show_eob = 0
 vim.g.everforest_better_performance = 1
+vim.g.everforest_transparent_background = 1
 
 vim.cmd[[colorscheme everforest]]
 
@@ -26,7 +27,7 @@ end
 
 local palette = vim.fn["my#get_palette"]()
 vim.cmd([[hi Comment guifg=]] .. palette["grey1"][1])
+vim.cmd([[hi DiagnosticSignError guifg=]] .. palette["red"][1])
+vim.cmd([[hi DiagnosticSignWarn guifg=]] .. palette["yellow"][1])
 vim.cmd([[hi DiagnosticSignInfo guifg=]] .. palette["green"][1])
 vim.cmd([[hi DiagnosticSignHint guifg=]] .. palette["aqua"][1])
-
--- vim.cmd([[hi FloatBorder guifg=]] .. palette["bg2"][1] .. [[ guibg=]] .. palette["bg0"][1])

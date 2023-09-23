@@ -23,7 +23,7 @@ require("neo-tree").setup({
   },
   default_component_configs = {
     container = {
-      enable_character_fade = true,
+      enable_character_fade = false,
       width = "100%",
       right_padding = 0,
     },
@@ -62,17 +62,78 @@ require("neo-tree").setup({
     git_status = {
       symbols = {
         -- Change type
-        added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
-        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-        deleted   = "✖",-- this can only be used in the git_status source
-        renamed   = "",-- this can only be used in the git_status source
+        -- added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+        -- modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+        -- deleted   = "✖",-- this can only be used in the git_status source
+        -- renamed   = "",-- this can only be used in the git_status source
         -- Status type
-        untracked = "",
-        ignored   = "",
+        -- untracked = "",
+        -- ignored   = "",
+        -- unstaged  = "",
+        -- staged    = "",
+        -- conflict  = "",
+        -- Change type
+        added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+        deleted   = "",-- this can only be used in the git_status source
+        renamed   = "",-- this can only be used in the git_status source
+        -- Status type
+        untracked = "",
+        ignored   = "",
         unstaged  = "",
-        staged    = "",
-        conflict  = "",
+        staged    = "",
+        conflict  = "",
       }
+    },
+  },
+  renderers = {
+    directory = {
+      { "indent" },
+      { "icon" },
+      { "current_filter" },
+      {
+        "container",
+        width = "100%",
+        right_padding = 1,
+        --max_width = 60,
+        content = {
+          { "name", zindex = 10 },
+          -- {
+          --   "symlink_target",
+          --   zindex = 10,
+          --   highlight = "NeoTreeSymbolicLinkTarget",
+          -- },
+          -- { "clipboard", zindex = 10 },
+          -- { "diagnostics", errors_only = true, zindex = 20, align = "right" },
+        },
+      },
+    },
+    file = {
+      { "indent" },
+      { "icon" },
+      {
+        "container",
+        width = "100%",
+        right_padding = 1,
+        --max_width = 60,
+        content = {
+          {
+            "name",
+            use_git_status_colors = true,
+            zindex = 10
+          },
+          -- {
+          --   "symlink_target",
+          --   zindex = 10,
+          --   highlight = "NeoTreeSymbolicLinkTarget",
+          -- },
+          { "clipboard", zindex = 10 },
+          { "bufnr", zindex = 10 },
+          { "modified", zindex = 20, align = "right" },
+          { "diagnostics",  zindex = 20, align = "right" },
+          { "git_status", zindex = 20, align = "right" },
+        },
+      },
     },
   },
   window = {
@@ -164,7 +225,9 @@ require("neo-tree").setup({
         --".null-ls_*",
       },
     },
-    follow_current_file = false, -- This will find and focus the file in the active buffer every
+    follow_current_file = {
+      enabled = false
+    },                           -- This will find and focus the file in the active buffer every
                                  -- time the current file is changed while the tree is open.
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
@@ -189,7 +252,9 @@ require("neo-tree").setup({
     }
   },
   buffers = {
-    follow_current_file = true, -- This will find and focus the file in the active buffer every
+    follow_current_file = {
+      enabled = true,
+    }, -- This will find and focus the file in the active buffer every
                                  -- time the current file is changed while the tree is open.
     group_empty_dirs = true, -- when true, empty folders will be grouped together
     show_unloaded = true,
@@ -217,23 +282,27 @@ require("neo-tree").setup({
   },
 })
 
+vim.cmd[[hi NeoTreeNormal guibg=#000]]
+vim.cmd[[hi NeoTreeNormalNC guibg=#000]]
 
-local palette = vim.fn["my#get_palette"]()
+-- local palette = vim.fn["my#get_palette"]()
 
-vim.cmd([[hi clear NeoTreeGitUntracked]])
-vim.cmd([[hi clear NeoTreeRootName]])
-vim.cmd([[hi NeoTreeGitUntracked guifg=]] ..  palette["aqua"][1])
-vim.cmd([[hi NeoTreeGitUnstaged guifg=NONE guibg=NONE]])
-vim.cmd([[hi NeoTreeGitStaged guifg=NONE guibg=NONE]])
-vim.cmd([[hi NeoTreeDirectoryIcon guifg=]] .. palette["orange"][1])
-vim.cmd([[hi NeoTreeGitModified guifg=]] .. palette["yellow"][1])
-vim.cmd([[hi NeoTreeFloatBorder guifg=]] .. palette["bg2"][1] .. [[ guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeFloatTitle guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeFloatNormal guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeTitleBar guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeNormal guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeEndOfBuffer guibg=]] .. palette["bg0"][1])
-vim.cmd([[hi NeoTreeFilterTerm guibg=]] .. palette["bg0"][1])
+-- vim.cmd[[hi clear NeoTreeGitModified]]
+
+-- vim.cmd([[hi clear NeoTreeGitUntracked]])
+-- vim.cmd([[hi clear NeoTreeRootName]])
+-- vim.cmd([[hi NeoTreeGitUntracked guifg=]] ..  palette["aqua"][1])
+-- vim.cmd([[hi NeoTreeGitUnstaged guifg=NONE guibg=NONE]])
+-- vim.cmd([[hi NeoTreeGitStaged guifg=NONE guibg=NONE]])
+-- vim.cmd([[hi NeoTreeDirectoryIcon guifg=]] .. palette["orange"][1])
+-- vim.cmd([[hi NeoTreeGitModified guifg=]] .. palette["yellow"][1])
+-- vim.cmd([[hi NeoTreeFloatBorder guifg=]] .. palette["bg2"][1] .. [[ guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeFloatTitle guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeFloatNormal guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeTitleBar guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeNormal guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeEndOfBuffer guibg=]] .. palette["bg0"][1])
+-- vim.cmd([[hi NeoTreeFilterTerm guibg=]] .. palette["bg0"][1])
 
 -- vim.cmd([[hi FloatBorder guifg=]] .. palette["bg4"][1] .. [[ guibg=]] .. palette["bg0"][1])
 -- vim.cmd([[hi NeoTreeGitAdded guifg=NONE guibg=NONE]])
@@ -241,49 +310,3 @@ vim.cmd([[hi NeoTreeFilterTerm guibg=]] .. palette["bg0"][1])
 -- vim.cmd([[hi NeoTreeGitDeleted guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitIgnored guifg=NONE guibg=NONE]])
 -- vim.cmd([[hi NeoTreeGitRenamed guifg=NONE guibg=NONE]])
-
--- vim.cmd([[ hi clear NeoTreeBufferNumber ]])
--- vim.cmd([[ hi clear NeoTreeCursorLine ]])
--- vim.cmd([[ hi clear NeoTreeDimText ]])
--- vim.cmd([[ hi clear NeoTreeDirectoryIcon ]])
--- vim.cmd([[ hi clear NeoTreeDirectoryName ]])
--- vim.cmd([[ hi clear NeoTreeDotfile ]])
--- vim.cmd([[ hi clear NeoTreeFadeText1 ]])
--- vim.cmd([[ hi clear NeoTreeFadeText2 ]])
--- vim.cmd([[ hi clear NeoTreeFileIcon ]])
--- vim.cmd([[ hi clear NeoTreeFileName ]])
--- vim.cmd([[ hi clear NeoTreeFileNameOpened ]])
--- vim.cmd([[ hi clear NeoTreeFilterTerm ]])
--- vim.cmd([[ hi clear NeoTreeFloatBorder ]])
--- vim.cmd([[ hi clear NeoTreeFloatTitle ]])
--- vim.cmd([[ hi clear NeoTreeGitAdded ]])
--- vim.cmd([[ hi clear NeoTreeGitConflict ]])
--- vim.cmd([[ hi clear NeoTreeGitDeleted ]])
--- vim.cmd([[ hi clear NeoTreeGitIgnored ]])
--- vim.cmd([[ hi clear NeoTreeGitModified ]])
--- vim.cmd([[ hi clear NeoTreeGitRenamed ]])
--- vim.cmd([[ hi clear NeoTreeGitStaged ]])
--- vim.cmd([[ hi clear NeoTreeGitUntracked ]])
--- vim.cmd([[ hi clear NeoTreeGitUnstaged ]])
--- vim.cmd([[ hi clear NeoTreeHiddenByName ]])
--- vim.cmd([[ hi clear NeoTreeIndentMarker ]])
--- vim.cmd([[ hi clear NeoTreeModified ]])
--- vim.cmd([[ hi clear NeoTreeNormal ]])
--- vim.cmd([[ hi clear NeoTreeNormalNC ]])
--- vim.cmd([[ hi clear NeoTreeSignColumn ]])
--- vim.cmd([[ hi clear NeoTreeStatusLine ]])
--- vim.cmd([[ hi clear NeoTreeStatusLineNC ]])
--- vim.cmd([[ hi clear NeoTreeTabActive ]])
--- vim.cmd([[ hi clear NeoTreeTabInactive ]])
--- vim.cmd([[ hi clear NeoTreeTabSeparatorActive ]])
--- vim.cmd([[ hi clear NeoTreeTabSeparatorInactive ]])
--- vim.cmd([[ hi clear NeoTreeVertSplit ]])
--- vim.cmd([[ hi clear NeoTreeWinSeparator ]])
--- vim.cmd([[ hi clear NeoTreeEndOfBuffer ]])
--- vim.cmd([[ hi clear NeoTreeRootName ]])
--- vim.cmd([[ hi clear NeoTreeSymbolicLinkTarget ]])
--- vim.cmd([[ hi clear NeoTreeTitleBar ]])
--- vim.cmd([[ hi clear NeoTreeIndentMarker ]])
--- vim.cmd([[ hi clear NeoTreeExpander ]])
--- vim.cmd([[ hi clear NeoTreeWindowsHidden ]])
--- vim.cmd([[ hi clear NeoTreePreview ]])
