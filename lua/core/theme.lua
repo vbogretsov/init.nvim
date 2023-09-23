@@ -6,7 +6,7 @@ vim.g.everforest_background = "soft"
 vim.g.everforest_show_eob = 0
 vim.g.everforest_better_performance = 1
 
-if vim.fn.exists("g:neovide") then
+if vim.fn.has("gui_running") ~= 0 then
   vim.g.everforest_transparent_background = 0
 else
   vim.g.everforest_transparent_background = 1
