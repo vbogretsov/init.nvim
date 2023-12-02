@@ -26,7 +26,8 @@ return packer.startup(function()
 
   local lspkind = {
     "onsails/lspkind.nvim",
-    commit = "57610d5",
+    -- commit = "57610d5",
+    commit = "7a41b98",
   }
 
   use {
@@ -37,7 +38,7 @@ return packer.startup(function()
 
   use {
     "sainnhe/everforest",
-    commit = "83b6664",
+    commit = "72f101b",
   }
 
   -- Proper buffer deletion
@@ -69,7 +70,8 @@ return packer.startup(function()
   -- Icons
   use {
     "nvim-tree/nvim-web-devicons",
-    commit = "b844d3d",
+    -- commit = "b844d3d",
+    commit = "5efb8bd",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -77,7 +79,7 @@ return packer.startup(function()
   -- Status line
   use {
     "hoob3rt/lualine.nvim",
-    commit    = "45e27ca",
+    commit    = "2248ef2",
     config    = "require'plugins.configs.lualine'",
     event     = "VimEnter",
     requires  = "nvim-web-devicons",
@@ -86,7 +88,8 @@ return packer.startup(function()
   -- Buffer line
   use {
     "akinsho/bufferline.nvim",
-    commit   = "99f0932",
+    -- commit   = "99f0932",
+    commit   = "1a33975",
     config   = "require'plugins.configs.bufferline'",
     requires = "kyazdani42/nvim-web-devicons",
     event    = "VimEnter",
@@ -95,7 +98,8 @@ return packer.startup(function()
   -- File browser
   use {
     "nvim-neo-tree/neo-tree.nvim",
-    commit    = "1424449",
+    -- commit    = "1424449",
+    commit    = "230ff11",
     cmd       = { "Neotree" },
     config    = "require'plugins.configs.neotree'",
     requires  = {
@@ -107,7 +111,7 @@ return packer.startup(function()
   -- Color column
   use {
     "lukas-reineke/virt-column.nvim",
-    tag    = "v1.5.6",
+    tag    = "v2.0.2",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.colorcolumn'",
   }
@@ -115,7 +119,8 @@ return packer.startup(function()
   -- Indent balnk lines
   use {
     "lukas-reineke/indent-blankline.nvim",
-    tag    = "v2.20.7",
+    -- tag    = "v2.20.7",
+    tag    = "v3.3.8",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.indent'",
     after  = "nvim-treesitter",
@@ -124,7 +129,7 @@ return packer.startup(function()
   -- Autopairs
   use {
     "windwp/nvim-autopairs",
-    commit  = "ae5b41c",
+    commit  = "0f04d78",
     event   = "InsertEnter",
     config  = "require'plugins.configs.autopairs'",
   }
@@ -139,7 +144,7 @@ return packer.startup(function()
   -- Comments
   use {
     "b3nj5m1n/kommentary",
-    commit = "3a80117",
+    commit = "d5a111a",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.kommentary'",
   }
@@ -164,7 +169,7 @@ return packer.startup(function()
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
-    commit    = "40c8d2f",
+    commit    = "84c5a71",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
     requires  = {
@@ -177,7 +182,8 @@ return packer.startup(function()
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "af6b3ec",
+    -- commit = "af6b3ec",
+    commit = "80a16de",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -193,7 +199,7 @@ return packer.startup(function()
   -- Autocompletion
   use {
     "hrsh7th/nvim-cmp",
-    commit   = "5dce1b7",
+    commit   = "0b751f6",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
     requires  = {
@@ -216,7 +222,7 @@ return packer.startup(function()
 
   use {
     "hrsh7th/vim-vsnip",
-    commit = "7753ba9",
+    commit = "7de8a71",
     after  = "cmp-vsnip",
   }
 
@@ -263,7 +269,7 @@ return packer.startup(function()
   -- Git
   use {
     "lewis6991/gitsigns.nvim",
-    commit = "7de0125",
+    commit = "6ef8c54",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.gitsigns'",
   }
@@ -276,19 +282,19 @@ return packer.startup(function()
 
   use {
     "dhruvasagar/vim-table-mode",
-    tag = "v4.7.6.1",
+    tag = "v4.8.1",
     cmd = "TableModeEnable",
   }
 
   use {
     "jbyuki/venn.nvim",
-    commit = "c114563",
+    commit = "e4d6834",
     cmd = "MyPlugInit",
   }
 
   use {
     "akinsho/toggleterm.nvim",
-    commit = "0427b90",
+    commit = "6b334b9",
     cmd    = "MyPlugInit",
     config = "require'plugins.configs.toggleterm'",
   }
@@ -296,7 +302,7 @@ return packer.startup(function()
   -- Markdown preview
   use {
     "toppair/peek.nvim",
-    commit = "67752e7",
+    commit = "4163a48",
     run    = "deno task --quiet build:fast",
     config = "require'plugins.configs.peek'",
   }

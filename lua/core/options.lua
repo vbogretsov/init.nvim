@@ -37,7 +37,7 @@ vim.o.foldlevel         = 10
 vim.o.foldmethod        = "expr"
 vim.o.foldexpr          = "nvim_treesitter#foldexpr()"
 vim.o.swapfile          = false
-vim.o.colorcolumn       = "120"
+vim.o.colorcolumn       = "80"
 vim.o.incsearch         = true
 
 vim.wo.wrap             = true
