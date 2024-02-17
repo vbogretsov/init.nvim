@@ -62,15 +62,18 @@ return packer.startup(function()
     config  = "require'plugins.configs.scrollbar'",
     cmd     = "MyPlugInit",
     requires = {
-      "kevinhwang91/nvim-hlslens",
-      commit = "fc83bd5",
+      {
+        "kevinhwang91/nvim-hlslens",
+        commit = "fc83bd5",
+        config = "require('hlslens').setup()",
+      }
     },
   }
 
   -- Icons
   use {
-    "kyazdani42/nvim-web-devicons",
-    commit = "bc11ee2",
+    "nvim-tree/nvim-web-devicons",
+    commit = "43aa2dd",
     config = "require'plugins.configs.devicons'",
     cmd    = "MyPlugInit",
   }
@@ -300,6 +303,13 @@ return packer.startup(function()
     commit = "571f14c",
     run    = "deno task --quiet build:fast",
     config = "require'plugins.configs.peek'",
+  }
+
+  use {
+    "IndianBoy42/tree-sitter-just",
+    after  = "nvim-treesitter",
+    commit = "f807ab3",
+    config = "require'plugins.configs.just'",
   }
 
 end)

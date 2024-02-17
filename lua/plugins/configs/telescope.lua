@@ -38,6 +38,8 @@ require("telescope").setup {
      "--smart-case",
      "--glob=!.venv/*",
      "--glob=!.git/*",
+     "--glob=!.pytest_cache/*",
+     "--glob=!__pycache__/*",
     },
     prompt_prefix = "   ",
     layout_strategy = "vertical",
