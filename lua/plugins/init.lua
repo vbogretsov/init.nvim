@@ -1,34 +1,26 @@
-local present, packer = pcall(require, "plugins.setup")
+vim.cmd[[packadd packer.nvim]]
 
+local present, packer = pcall(require, "packer")
 if not present then
-   return false
+  return
 end
 
-local use = packer.use
+packer.init {
+   display = {
+      open_fn = function()
+         return require("packer.util").float({ border = "single" })
+      end,
+      prompt_border = "single",
+   },
+   git = {
+      clone_timeout = 6000, -- seconds
+   },
+   auto_clean      = true,
+   compile_on_sync = true,
+}
 
 return packer.startup(function()
-
-  local telescope_fzf_native = {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    commit = "6c921ca",
-    run    = "make",
-  }
-
-  local telescope_ui_select = {
-    "nvim-telescope/telescope-ui-select.nvim",
-    commit = "62ea5e5",
-  }
-
-  local cmp_under_cursor = {
-    "lukas-reineke/cmp-under-comparator",
-    commit = "6857f10",
-  }
-
-  local lspkind = {
-    "onsails/lspkind.nvim",
-    -- commit = "57610d5",
-    commit = "7a41b98",
-  }
+  local use = packer.use
 
   use {
     "wbthomason/packer.nvim",
@@ -98,8 +90,8 @@ return packer.startup(function()
   -- File browser
   use {
     "nvim-neo-tree/neo-tree.nvim",
-    -- commit    = "1424449",
-    commit    = "230ff11",
+    commit    = "1424449",
+    -- commit    = "230ff11",
     cmd       = { "Neotree" },
     config    = "require'plugins.configs.neotree'",
     requires  = {
@@ -166,24 +158,48 @@ return packer.startup(function()
   }
 
   -- Navigation
+  -- use {
+  --   "Bekaboo/dropbar.nvim",
+  --   commit = "9405df5",
+  --   config = function()
+  --   end,
+  -- }
+
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    commit = "6c921ca",
+    run    = "make",
+  }
+
+  use {
+    "nvim-telescope/telescope-ui-select.nvim",
+    commit = "62ea5e5",
+  }
+
   -- NOTE: Requires to be installed: `ripgrep`, `fd`
   use {
     "nvim-telescope/telescope.nvim",
     commit    = "84c5a71",
     cmd       = "Telescope",
     config    = "require'plugins.configs.telescope'",
-    requires  = {
-      "nvim-lua/plenary.nvim",
-      telescope_fzf_native,
-      telescope_ui_select,
+    after     = {
+      "plenary.nvim",
+      "telescope-fzf-native.nvim",
+      "telescope-ui-select.nvim",
     },
   }
+
+  -- use {
+  --   "nvimdev/lspsaga.nvim",
+  --   commit = "b1b140a",
+  --   config = "require'plugins.configs.lspsaga'",
+  -- }
 
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    -- commit = "af6b3ec",
-    commit = "80a16de",
+    commit = "7958ff9",
+    -- commit = "80a16de",
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
@@ -191,21 +207,41 @@ return packer.startup(function()
 
   -- TODO: consider nvim-ts-context-commentstring
 
+  -- Autocompletion
+  use {
+    "williamboman/mason.nvim",
+    commit = "41e75af",
+    config = "require'plugins.configs.mason'",
+  }
+
+  use {
+    "williamboman/mason-lspconfig.nvim",
+    commit = "9453e3d",
+    config = "require'plugins.configs.masonlspconfig'",
+  }
+
   use {
     "windwp/nvim-ts-autotag",
     after = "nvim-treesitter",
   }
 
-  -- Autocompletion
+  use {
+    "lukas-reineke/cmp-under-comparator",
+    commit = "6857f10",
+  }
+
+  use {
+    "onsails/lspkind.nvim",
+    -- commit = "57610d5",
+    commit = "7a41b98",
+  }
+
   use {
     "hrsh7th/nvim-cmp",
     commit   = "0b751f6",
     cmd      = "MyPlugInit",
     config   = "require'plugins.configs.cmp'",
-    requires  = {
-      cmp_under_cursor,
-      lspkind,
-    }
+    after    = { "cmp-under-comparator", "lspkind.nvim" },
   }
 
   use {
@@ -248,15 +284,13 @@ return packer.startup(function()
   use {
     "tzachar/cmp-fuzzy-buffer",
     commit  = "5da5f20",
-    after   = "nvim-cmp",
-    requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
+    after   = { "nvim-cmp", "fuzzy.nvim" },
   }
 
   use {
     "tzachar/cmp-fuzzy-path",
     commit   = "0caa348",
-    after    = "nvim-cmp",
-    requires = {"hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim"}
+    after   = { "nvim-cmp", "fuzzy.nvim" },
   }
 
   -- LSP

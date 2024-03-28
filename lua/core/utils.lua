@@ -7,13 +7,14 @@ M.load = function(module)
   end
 end
 
-M.init_plugins = function(cmd)
+M.init_plugins = function()
   if vim.g.plugins_init_called then
     return
   end
   vim.g.plugins_init_called = 1
   local runcmd = function()
-    vim.cmd[[silent! MyPlugInit]]
+    -- vim.cmd[[silent! MyPlugInit]]
+    vim.cmd[[silent MyPlugInit]]
     vim.cmd[[doautocmd TextChanged]]
   end
   vim.defer_fn(runcmd, 1)

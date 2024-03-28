@@ -12,7 +12,7 @@ require("ibl").setup {
   -- show_trailing_blankline_indent  = false,
 
   scope = {
-    enabled = true,
+    enabled = false,
   },
 
   exclude = {
