@@ -15,6 +15,10 @@ require("ibl").setup {
     enabled = false,
   },
 
+  whitespace = {
+    remove_blankline_trail = false,
+  },
+
   exclude = {
     filetypes = {
       "terminal",

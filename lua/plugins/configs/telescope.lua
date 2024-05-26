@@ -51,7 +51,7 @@ require("telescope").setup {
   pickers = {
     find_files = {
       find_command = {
-        "fdfind",
+        "fd",
         "--type",
         "f",
         "--strip-cwd-prefix",

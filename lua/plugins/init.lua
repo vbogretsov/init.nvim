@@ -100,6 +100,11 @@ return packer.startup(function()
     },
   }
 
+  use {
+    'theblob42/drex.nvim',
+    requires = 'kyazdani42/nvim-web-devicons', -- optional
+  }
+
   -- Color column
   use {
     "lukas-reineke/virt-column.nvim",
@@ -189,12 +194,6 @@ return packer.startup(function()
     },
   }
 
-  -- use {
-  --   "nvimdev/lspsaga.nvim",
-  --   commit = "b1b140a",
-  --   config = "require'plugins.configs.lspsaga'",
-  -- }
-
   -- Tree-Sitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -203,6 +202,13 @@ return packer.startup(function()
     cmd    = "MyPlugInit",
     run    = ":TSUpdate",
     config = "require'plugins.configs.treesitter'",
+  }
+
+  use {
+    "IndianBoy42/tree-sitter-just",
+    after  = "nvim-treesitter",
+    commit = "6c2f018",
+    config = "require('tree-sitter-just').setup({})",
   }
 
   -- TODO: consider nvim-ts-context-commentstring
@@ -339,6 +345,19 @@ return packer.startup(function()
     commit = "4163a48",
     run    = "deno task --quiet build:fast",
     config = "require'plugins.configs.peek'",
+  }
+
+  -- DBML
+  use {
+    "jidn/vim-dbml",
+    commit = "c684576",
+  }
+
+  -- UUID
+  use {
+    "timwmillard/uuid.nvim",
+    commit = "c5b49a1",
+    config = "require'uuid'",
   }
 
 end)

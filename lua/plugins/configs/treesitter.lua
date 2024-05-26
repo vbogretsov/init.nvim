@@ -64,3 +64,14 @@ require("nvim-treesitter.configs").setup {
     },
   },
 }
+
+-- require("nvim-treesitter.parsers").get_parser_configs().dbml = {
+--   install_info = {
+--     url    = "https://github.com/dynamotn/tree-sitter-dbml",
+--     files  = { "src/parser.c" },
+--     branch = "main",
+--   },
+--   maintainers = { "@dynamotn" },
+-- }
+
+-- vim.treesitter.language.register("dbml", "dbml")

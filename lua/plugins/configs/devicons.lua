@@ -14,10 +14,30 @@ return devicons.setup {
     color = "#519aba",
     name = "gosum",
   },
+  [".dockerignore"] = {
+    icon = "",
+    color = "#7fbbb3",
+    name = ".dockerignore",
+  },
   ["Dockerfile"] = {
     icon = "",
-    color = "#519aba",
-    name = "Dockerfile"
+    color = "#7fbbb3",
+    name = "dockerfile",
+  },
+  ["dockerfile"] = {
+    icon = "",
+    color = "#7fbbb3",
+    name = "dockerfile",
+  },
+  ["docker-compose.yaml"] = {
+    icon = "",
+    color = "#7fbbb3",
+    name = "dockerfile",
+  },
+  ["docker-compose.yml"] = {
+    icon = "",
+    color = "#7fbbb3",
+    name = "dockerfile",
   },
   ["makefile"] = {
     icon = "",
@@ -33,6 +53,21 @@ return devicons.setup {
     icon = "",
     color = "#dfa000",
     name = "Makefile"
+  },
+  ["properties"] = {
+    icon = "",
+    color = "#41535b",
+    name = "jproperties",
+  },
+  ["Justfile"] = {
+    icon = "",
+    color = "#dbbc7f",
+    name = "Justfile",
+  },
+  ["justfile"] = {
+    icon = "",
+    color = "#dbbc7f",
+    name = "justfile",
   },
   ["markdown"] = {
     icon = "",
@@ -68,6 +103,16 @@ return devicons.setup {
     color = "#519aba",
     name = "rst",
   },
+  ["md"] = {
+    icon = "",
+    color = "#519aba",
+    name = "md",
+  },
+  ["markdown"] = {
+    icon = "",
+    color = "#519aba",
+    name = "markdown",
+  },
   ["tf"] = {
     -- icon = "",
     icon = "",
@@ -84,6 +129,17 @@ return devicons.setup {
     icon = "",
     color = "#df69ba",
     name = "tfvars",
+  },
+  ["toml"] = {
+    icon = "",
+    color = "#41535b",
+    name = "Toml",
+  },
+  ["txt"] = {
+    icon = "",
+    color = "#89e051",
+    cterm_color = "113",
+    name = "Txt",
   },
   ["sh"] = {
     icon = "",
