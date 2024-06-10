@@ -12,8 +12,8 @@ return {
   {
     "williamboman/mason.nvim",
     commit = "41e75af",
-    opts   = opts,
-    cmd    = "Mason",
+    opts = opts,
+    cmd = "Mason",
   },
   {
     "williamboman/mason-lspconfig.nvim",

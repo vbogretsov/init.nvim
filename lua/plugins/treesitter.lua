@@ -1,12 +1,12 @@
 local opts = {
   ensure_installed = "all",
   highlight = {
-    enable           = true,
+    enable = true,
     use_languagetree = true,
   },
   ignore_install = { "t32" },
   indent = {
-    enable  = true,
+    enable = true,
     disable = {
       "yaml",
       "python",
@@ -21,17 +21,17 @@ local opts = {
     enable = true,
   },
   incremental_selection = {
-    enable  = true,
+    enable = true,
     keymaps = {
-      init_selection    = "gnn",
-      node_incremental  = "grn",
+      init_selection = "gnn",
+      node_incremental = "grn",
       scope_incremental = "grc",
-      node_decremental  = "grm",
+      node_decremental = "grm",
     },
   },
   textobjects = {
     select = {
-      enable    = true,
+      enable = true,
       lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
@@ -42,12 +42,12 @@ local opts = {
       },
     },
     move = {
-      enable    = true,
+      enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
         ["mf"] = "@function.outer",
         ["mc"] = "@class.outer",
-        ['mb'] = "@block.outer",
+        ["mb"] = "@block.outer",
       },
       --[[ goto_next_end = {
         [''] = '@function.outer',
@@ -69,24 +69,26 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "7958ff9",
-    event  = "VeryLazy",
-    opts   = opts,
+    event = "VeryLazy",
+    config = function()
+      require("nvim-treesitter.configs").setup(opts)
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     commit = "34867c6",
-    event  = "VeryLazy",
+    event = "VeryLazy",
   },
   {
     "windwp/nvim-ts-autotag",
     commit = "6eb4120",
-    event  = "VeryLazy",
+    event = "VeryLazy",
     config = true,
   },
   {
     "IndianBoy42/tree-sitter-just",
     commit = "6c2f018",
-    event  = "VeryLazy",
+    event = "VeryLazy",
     config = true,
   },
 }

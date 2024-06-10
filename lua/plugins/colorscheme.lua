@@ -1,5 +1,5 @@
-vim.cmd[[hi clear SignColumn]]
-vim.cmd[[hi clear VertSplit]]
+vim.cmd([[hi clear SignColumn]])
+vim.cmd([[hi clear VertSplit]])
 
 vim.g.everforest_background = "soft"
 vim.g.everforest_show_eob = 0
@@ -17,17 +17,30 @@ vim.g.colorscheme_highlight = vim.fn["everforest#highlight"]
 return {
   {
     "sainnhe/everforest",
-    name     = "everforest",
-    commit   = "9dbd4d1",
-    lazy     = false,
+    name = "everforest",
+    -- commit   = "9dbd4d1",
+    commit = "3e5ec25",
+    lazy = false,
     priority = 1000,
 
     config = function()
-      vim.cmd[[colorscheme everforest]]
-      vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
-      vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
-      vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
-      vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+      vim.cmd([[colorscheme everforest]])
+      vim.fn.sign_define(
+        "DiagnosticSignError",
+        { text = " ", texthl = "DiagnosticSignError" }
+      )
+      vim.fn.sign_define(
+        "DiagnosticSignWarn",
+        { text = " ", texthl = "DiagnosticSignWarn" }
+      )
+      vim.fn.sign_define(
+        "DiagnosticSignInfo",
+        { text = " ", texthl = "DiagnosticSignInfo" }
+      )
+      vim.fn.sign_define(
+        "DiagnosticSignHint",
+        { text = "", texthl = "DiagnosticSignHint" }
+      )
     end,
   },
 }

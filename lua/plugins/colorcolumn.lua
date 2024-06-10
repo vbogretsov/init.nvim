@@ -1,7 +1,7 @@
 return {
   {
     "lukas-reineke/virt-column.nvim",
-    tag   = "v2.0.2",
-    opts  = { char = "┆" },
+    tag = "v2.0.2",
+    opts = { char = "┆" },
   },
 }

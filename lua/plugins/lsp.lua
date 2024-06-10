@@ -6,13 +6,13 @@ local function setup()
   caps = require("cmp_nvim_lsp").default_capabilities(caps)
 
   -- C/C++
-  lsp.clangd.setup{
+  lsp.clangd.setup({
     capabilities = caps,
-  }
+  })
 
   -- Go
   -- requires gopls
-  lsp.gopls.setup {
+  lsp.gopls.setup({
     capabilities = caps,
     filetypes = {
       "go",
@@ -21,27 +21,27 @@ local function setup()
       "gotmpl",
     },
     root_dir = util.root_pattern("go.mod", ".git"),
-    single_file_support = true
-  }
+    single_file_support = true,
+  })
 
   -- Terraform
   -- requires terraform-ls
-  lsp.terraformls.setup {
+  lsp.terraformls.setup({
     cmd = { "terraform-ls", "serve" },
     capabilities = caps,
-  }
+  })
 
   -- Docker Compose
-  lsp.docker_compose_language_service.setup{
+  lsp.docker_compose_language_service.setup({
     capabilities = caps,
-  }
+  })
 
   -- Docker
-  lsp.dockerls.setup{
+  lsp.dockerls.setup({
     capabilities = caps,
-  }
+  })
 
-  --[[ -- Python
+  -- Python
   local function detect_python()
     local venvdir = ".venv"
     local path = util.path
@@ -53,7 +53,7 @@ local function setup()
   end
 
   lsp.pyright.setup({
-    root_dir = function(startpath)
+    root_dir = function()
       return vim.fn.getcwd()
     end,
     settings = {
@@ -66,12 +66,13 @@ local function setup()
       },
     },
     capabilities = caps,
-  }) ]]
+  })
 
   -- Python
-  lsp.ruff_lsp.setup({
+  --[[ lsp.ruff_lsp.setup({
+    single_file_support = true,
     capabilities = caps,
-  })
+  }) ]]
 
   lsp.tsserver.setup({
     capabilities = caps,
@@ -81,7 +82,7 @@ local function setup()
   lsp.jsonls.setup({
     cmd = { "vscode-json-languageserver", "--stdio" },
     init_options = {
-      provideFormatter = true
+      provideFormatter = true,
     },
     capabilities = caps,
   })
@@ -95,22 +96,26 @@ local function setup()
   lsp.lua_ls.setup({
     on_init = function(client)
       local path = client.workspace_folders[1].name
-      if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      if
+        vim.loop.fs_stat(path .. "/.luarc.json")
+        or vim.loop.fs_stat(path .. "/.luarc.jsonc")
+      then
         return
       end
-      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-        runtime = {
-          version = 'LuaJIT'
-        },
-        workspace = {
-          checkThirdParty = false,
-          library = vim.api.nvim_get_runtime_file("", true)
-        }
-      })
+      client.config.settings.Lua =
+        vim.tbl_deep_extend("force", client.config.settings.Lua, {
+          runtime = {
+            version = "LuaJIT",
+          },
+          workspace = {
+            checkThirdParty = false,
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+        })
     end,
     settings = {
-      Lua = {}
-    }
+      Lua = {},
+    },
   })
 
   -- rust
@@ -129,20 +134,19 @@ local function setup()
           },
         },
         procMacro = {
-          enable = true
+          enable = true,
         },
-      }
+      },
     },
     capabilities = caps,
   })
-
 end
 
 return {
   {
     "neovim/nvim-lspconfig",
     commit = "92166b8",
-    event  = "VeryLazy",
+    event = "VeryLazy",
     config = setup,
   },
 }

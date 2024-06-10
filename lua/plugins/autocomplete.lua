@@ -20,8 +20,14 @@ local function setup()
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
       }),
-      ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s", "c" }),
-      ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s", "c" }),
+      ["<Tab>"] = cmp.mapping(
+        cmp.mapping.select_next_item(),
+        { "i", "s", "c" }
+      ),
+      ["<S-Tab>"] = cmp.mapping(
+        cmp.mapping.select_prev_item(),
+        { "i", "s", "c" }
+      ),
     },
     comparators = {
       cmp.config.compare.offset,
@@ -35,9 +41,9 @@ local function setup()
     },
     formatting = {
       format = lspkind.cmp_format({
-        mode          = "symbol",
-        maxwidth      = 60,
-        ellipsis_char = '...',
+        mode = "symbol",
+        maxwidth = 60,
+        ellipsis_char = "...",
       }),
     },
     window = {
@@ -55,7 +61,7 @@ local function setup()
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = "fuzzy_buffer" },
-    }
+    },
   })
 
   cmp.setup.cmdline(":", {
@@ -67,56 +73,56 @@ local function setup()
       {
         name = "cmdline",
       },
-    })
+    }),
   })
 end
 
 return {
   {
     "tzachar/fuzzy.nvim",
-    commit   = "67a42ad",
-    event    = "VeryLazy",
+    commit = "67a42ad",
+    event = "VeryLazy",
   },
   {
     "hrsh7th/nvim-cmp",
     commit = "a110e12",
-    event  = "VeryLazy",
+    event = "InsertEnter",
     config = setup,
   },
   {
     "hrsh7th/cmp-path",
     commit = "91ff86c",
-    event  = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-buffer",
     commit = "3022dbc",
-    event  = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-nvim-lsp",
     commit = "39e2eda",
-    event    = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "hrsh7th/cmp-cmdline",
     commit = "c66c379",
-    event    = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "tzachar/cmp-fuzzy-buffer",
     commit = "5da5f20",
-    event    = "VeryLazy",
+    event = "InsertEnter",
     dependencies = { "nvim-cmp", "fuzzy.nvim" },
   },
   {
     "lukas-reineke/cmp-under-comparator",
     commit = "6857f10",
-    event    = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "onsails/lspkind.nvim",
     commit = "7a41b98",
-    event    = "VeryLazy",
+    event = "InsertEnter",
   },
 }

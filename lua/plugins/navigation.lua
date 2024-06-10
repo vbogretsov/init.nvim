@@ -5,20 +5,22 @@ local function setup()
 
   local new_maker = function(filepath, bufnr, opts)
     filepath = vim.fn.expand(filepath)
-    job:new({
-      command = "file",
-      args = { "--mime-type", "-b", filepath },
-      on_exit = function(j)
-        local mime_type = vim.split(j:result()[1], "/")[1]
-        if mime_type == "text" then
-          previewers.buffer_previewer_maker(filepath, bufnr, opts or {})
-        else
-          vim.schedule(function()
-            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-          end)
-        end
-      end
-    }):sync()
+    job
+      :new({
+        command = "file",
+        args = { "--mime-type", "-b", filepath },
+        on_exit = function(j)
+          local mime_type = vim.split(j:result()[1], "/")[1]
+          if mime_type == "text" then
+            previewers.buffer_previewer_maker(filepath, bufnr, opts or {})
+          else
+            vim.schedule(function()
+              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
+            end)
+          end
+        end,
+      })
+      :sync()
   end
 
   telescope.setup({
@@ -28,15 +30,15 @@ local function setup()
         filesize_limit = 0.5,
       },
       vimgrep_arguments = {
-       "rg",
-       "--color=never",
-       "--no-heading",
-       "--with-filename",
-       "--line-number",
-       "--column",
-       "--smart-case",
-       "--glob=!.venv/*",
-       "--glob=!.git/*",
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--glob=!.venv/*",
+        "--glob=!.git/*",
       },
       prompt_prefix = "   ",
       layout_strategy = "vertical",
@@ -66,7 +68,7 @@ local function setup()
           "--exclude",
           "*.jsonl",
         },
-      }
+      },
     },
     extensions = {
       fzf = {
@@ -76,7 +78,7 @@ local function setup()
         case_mode = "ignore_case",
       },
       ["ui-select"] = {
-        require("telescope.themes").get_dropdown {
+        require("telescope.themes").get_dropdown({
           prompt_prefix = "   ",
           layout_strategy = "vertical",
           layout_config = {
@@ -84,9 +86,9 @@ local function setup()
             mirror = false,
             prompt_position = "bottom",
           },
-        }
+        }),
       },
-    }
+    },
   })
 
   telescope.load_extension("fzf")
@@ -97,14 +99,14 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     commit = "84c5a71",
-    cmd    = "Telescope",
+    cmd = "Telescope",
     config = setup,
     dependencies = { "plenary" },
   },
   {
     "nvim-telescope/telescope-fzf-native.nvim",
     commit = "9ef21b2",
-    build  = "make",
+    build = "make",
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",

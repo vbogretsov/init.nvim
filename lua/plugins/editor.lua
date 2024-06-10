@@ -2,7 +2,7 @@
 
 local function setup_autopairs()
   local npairs = require("nvim-autopairs")
-  local rule   = require("nvim-autopairs.rule")
+  local rule = require("nvim-autopairs.rule")
 
   npairs.setup({
     check_ts = true,
@@ -12,31 +12,36 @@ local function setup_autopairs()
     },
   })
 
-  npairs.add_rules {
-    rule(" ", " ")
-      :with_pair(function (opts)
-        local pair = opts.line:sub(opts.col - 1, opts.col)
-        return vim.tbl_contains({ "()", "[]", "{}" }, pair)
-      end),
+  npairs.add_rules({
+    rule(" ", " "):with_pair(function(opts)
+      local pair = opts.line:sub(opts.col - 1, opts.col)
+      return vim.tbl_contains({ "()", "[]", "{}" }, pair)
+    end),
     rule("( ", " )")
-        :with_pair(function() return false end)
-        :with_move(function(opts)
-            return opts.prev_char:match(".%)") ~= nil
-        end)
-        :use_key(")"),
+      :with_pair(function()
+        return false
+      end)
+      :with_move(function(opts)
+        return opts.prev_char:match(".%)") ~= nil
+      end)
+      :use_key(")"),
     rule("{ ", " }")
-        :with_pair(function() return false end)
-        :with_move(function(opts)
-            return opts.prev_char:match(".%}") ~= nil
-        end)
-        :use_key("}"),
+      :with_pair(function()
+        return false
+      end)
+      :with_move(function(opts)
+        return opts.prev_char:match(".%}") ~= nil
+      end)
+      :use_key("}"),
     rule("[ ", " ]")
-        :with_pair(function() return false end)
-        :with_move(function(opts)
-            return opts.prev_char:match(".%]") ~= nil
-        end)
-        :use_key("]")
-  }
+      :with_pair(function()
+        return false
+      end)
+      :with_move(function(opts)
+        return opts.prev_char:match(".%]") ~= nil
+      end)
+      :use_key("]"),
+  })
 end
 
 local function setup_scrollbar()
@@ -44,33 +49,33 @@ local function setup_scrollbar()
     set_highlights = true,
     marks = {
       Cursor = {
-        priority  = 10,
-        text      = " ",
+        priority = 10,
+        text = " ",
       },
       Search = {
-        priority  = 1,
+        priority = 1,
       },
       Error = {
-        priority  = 2,
+        priority = 2,
       },
       Warn = {
-        priority  = 3,
+        priority = 3,
       },
       Info = {
-        priority  = 4,
+        priority = 4,
       },
       Hint = {
-        priority  = 5,
+        priority = 5,
       },
       Misc = {
-        priority  = 6,
+        priority = 6,
       },
     },
     handlers = {
       diagnostic = true,
-      search     = true,
-      cursor     = true,
-      handle     = true,
+      search = true,
+      cursor = true,
+      handle = true,
     },
     excluded_buftypes = {
       "terminal",
@@ -88,6 +93,8 @@ local function setup_scrollbar()
       "TelescopeResults",
       "noice",
       "neo-tree",
+      "lazy",
+      "mason",
     },
   })
 
@@ -112,13 +119,13 @@ return {
   },
   {
     "tpope/vim-surround",
-    tag   = "v2.2",
+    tag = "v2.2",
   },
   {
     "windwp/nvim-autopairs",
-    commit  = "7470af8",
-    event   = "InsertEnter",
-    config  = setup_autopairs,
+    commit = "7470af8",
+    event = "InsertEnter",
+    config = setup_autopairs,
   },
   {
     "kevinhwang91/nvim-hlslens",
@@ -127,25 +134,23 @@ return {
   },
   {
     "petertriho/nvim-scrollbar",
-    commit  = "35f99d5",
-    config  = setup_scrollbar,
+    commit = "35f99d5",
+    config = setup_scrollbar,
   },
   {
     "norcalli/nvim-colorizer.lua",
-    commit  = "36c610a",
-    config  = function()
-      require("colorizer").setup(
-        {"*"},
-        {
-          RGB       = true,
-          RRGGBB    = true,
-          names     = true,
-          RRGGBBAA  = true,
-          rgb_fn    = true,
-          hsl_fn    = true,
-          css       = true,
-          css_fn    = true,
+    commit = "36c610a",
+    config = function()
+      require("colorizer").setup({ "*" }, {
+        RGB = true,
+        RRGGBB = true,
+        names = true,
+        RRGGBBAA = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        css = true,
+        css_fn = true,
       })
     end,
-  }
+  },
 }

@@ -1,1 +1,1 @@
-vim.cmd[[setlocal cc=0]]
+vim.cmd([[setlocal cc=0]])
