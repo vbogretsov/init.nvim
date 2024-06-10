@@ -1,4 +1,4 @@
-# TODO: refactor
+-- TODO: refactor
 
 local function on_enter()
   vim.cmd[[setlocal nobuflisted]]

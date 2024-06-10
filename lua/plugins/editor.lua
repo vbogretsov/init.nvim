@@ -1,3 +1,5 @@
+-- TODO: split by files
+
 local function setup_autopairs()
   local npairs = require("nvim-autopairs")
   local rule   = require("nvim-autopairs.rule")
