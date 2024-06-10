@@ -41,7 +41,7 @@ local function setup()
     capabilities = caps,
   }
 
-  -- Python
+  --[[ -- Python
   local function detect_python()
     local venvdir = ".venv"
     local path = util.path
@@ -66,6 +66,11 @@ local function setup()
       },
     },
     capabilities = caps,
+  }) ]]
+
+  -- Python
+  lsp.ruff_lsp.setup({
+    capabilities = caps,
   })
 
   lsp.tsserver.setup({
@@ -87,8 +92,28 @@ local function setup()
   })
 
   -- Lua
-  lsp.lua_ls.setup({})
+  lsp.lua_ls.setup({
+    on_init = function(client)
+      local path = client.workspace_folders[1].name
+      if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+        return
+      end
+      client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+        runtime = {
+          version = 'LuaJIT'
+        },
+        workspace = {
+          checkThirdParty = false,
+          library = vim.api.nvim_get_runtime_file("", true)
+        }
+      })
+    end,
+    settings = {
+      Lua = {}
+    }
+  })
 
+  -- rust
   lsp.rust_analyzer.setup({
     settings = {
       ["rust-analyzer"] = {

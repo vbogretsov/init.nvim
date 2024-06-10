@@ -91,23 +91,17 @@ local function setup_scrollbar()
     },
   })
 
-  local palette = vim.fn["my#get_palette"]()
-  local cursor_color = palette["bg1"][1]
-  local cursor_blend = 0
+  local colors = vim.g.colorscheme_get_palette()
+  local hl = vim.g.colorscheme_highlight
 
-  vim.cmd(string.format("hi ScrollbarHandle guibg=%s blend=%s", cursor_color, cursor_blend))
-  vim.cmd(string.format("hi ScrollbarCursorHandle guibg=%s blend=%s", cursor_color, cursor_blend))
-  vim.cmd(string.format("hi ScrollbarSearchHandle guibg=%s blend=%s", cursor_color, cursor_blend))
-  vim.cmd(string.format("hi ScrollbarErrorHandle guibg=%s guifg=%s blend=%s", cursor_color, palette["red"][1], cursor_blend))
-  vim.cmd(string.format("hi ScrollbarError guifg=%s", palette["red"][1]))
-  vim.cmd(string.format("hi ScrollbarWarnHandle guibg=%s guifg=%s blend=%s", cursor_color, palette["yellow"][1], cursor_blend))
-  vim.cmd(string.format("hi ScrollbarWarn guifg=%s", palette["yellow"][1]))
-  vim.cmd(string.format("hi ScrollbarInfoHandle guibg=%s guifg=%s blend=%s", cursor_color, palette["green"][1], cursor_blend))
-  vim.cmd(string.format("hi ScrollbarInfo guifg=%s", palette["green"][1]))
-  vim.cmd(string.format("hi ScrollbarHintHandle guibg=%s guifg=%s blend=%s", cursor_color, palette["aqua"][1], cursor_blend))
-  vim.cmd(string.format("hi ScrollbarHint guifg=%s", palette["aqua"][1]))
-  vim.cmd(string.format("hi ScrollbarMiscHandle guibg=%s guifg=%s blend=%s", cursor_color, palette["purple"][1], cursor_blend))
-  vim.cmd(string.format("hi ScrollbarMisc guifg=%s", palette["purple"][1]))
+  hl("ScrollbarError", colors.red, colors.bg0)
+  hl("ScrollbarErrorHandle", colors.red, colors.bg1)
+  hl("ScrollbarWarn", colors.yellow, colors.bg0)
+  hl("ScrollbarWarnHandle", colors.yellow, colors.bg1)
+  hl("ScrollbarInfo", colors.green, colors.bg0)
+  hl("ScrollbarInfoHandle", colors.green, colors.bg1)
+  hl("ScrollbarMisc", colors.purple, colors.bg0)
+  hl("ScrollbarMiscHandle", colors.purple, colors.bg1)
 end
 
 return {

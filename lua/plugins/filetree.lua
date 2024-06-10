@@ -174,6 +174,7 @@ return {
     },
     config = function()
       require("drex.config").configure(opts)
+      vim.cmd[[]]
     end,
   },
 }
