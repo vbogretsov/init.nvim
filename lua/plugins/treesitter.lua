@@ -72,7 +72,7 @@ return {
     event = "VeryLazy",
     config = function()
       require("nvim-treesitter.configs").setup(opts)
-    end
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

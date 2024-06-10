@@ -3,7 +3,7 @@ local opts = {
     ["Dockerfile"] = {
       icon = "",
       color = "#519aba",
-      name = "Dockerfile"
+      name = "Dockerfile",
     },
     ["py"] = {
       icon = "",
@@ -83,7 +83,7 @@ local opts = {
       color = "#df69ba",
       name = "tfvars",
     },
-  }
+  },
 }
 
 return {

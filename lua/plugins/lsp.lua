@@ -62,7 +62,7 @@ local function setup()
         pythonPath = detect_python(),
         analysis = {
           autoSearchPaths = true,
-        }
+        },
       },
     },
     capabilities = caps,
