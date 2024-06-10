@@ -107,9 +107,11 @@ return {
     "nvim-telescope/telescope-fzf-native.nvim",
     commit = "9ef21b2",
     build = "make",
+    lazy = true,
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
     commit = "6e51d7d",
+    lazy = true,
   },
 }
