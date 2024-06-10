@@ -71,11 +71,12 @@ return {
     "famiu/bufdelete.nvim",
     name = "bufdelete",
     commit = "8933abc",
+    cmd = "Bdelete",
   },
   {
     "akinsho/bufferline.nvim",
     name = "bufferline",
-    lazy = false,
+    event = "VeryLazy",
     commit = "99337f6",
     dependencies = { "bufdelete" },
     opts = opts,

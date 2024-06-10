@@ -74,13 +74,17 @@ local function setup()
     capabilities = caps,
   }) ]]
 
+  --[[ lsp.ruff.setup({
+    capabilities = caps,
+  }) ]]
+
   lsp.tsserver.setup({
     capabilities = caps,
   })
 
   -- JSON
   lsp.jsonls.setup({
-    cmd = { "vscode-json-languageserver", "--stdio" },
+    cmd = { "vscode-json-language-server", "--stdio" },
     init_options = {
       provideFormatter = true,
     },
@@ -97,21 +101,21 @@ local function setup()
     on_init = function(client)
       local path = client.workspace_folders[1].name
       if
-        vim.loop.fs_stat(path .. "/.luarc.json")
-        or vim.loop.fs_stat(path .. "/.luarc.jsonc")
+          vim.loop.fs_stat(path .. "/.luarc.json")
+          or vim.loop.fs_stat(path .. "/.luarc.jsonc")
       then
         return
       end
       client.config.settings.Lua =
-        vim.tbl_deep_extend("force", client.config.settings.Lua, {
-          runtime = {
-            version = "LuaJIT",
-          },
-          workspace = {
-            checkThirdParty = false,
-            library = vim.api.nvim_get_runtime_file("", true),
-          },
-        })
+          vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = {
+              version = "LuaJIT",
+            },
+            workspace = {
+              checkThirdParty = false,
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+          })
     end,
     settings = {
       Lua = {},
@@ -148,5 +152,34 @@ return {
     commit = "92166b8",
     event = "VeryLazy",
     config = setup,
+  },
+  {
+    "nvimtools/none-ls.nvim",
+    commit = "8691504",
+    event = "VeryLazy",
+    dependencies = { "none-ls-extras.nvim" },
+
+    config = function()
+      local null_ls = require("null-ls")
+      null_ls.setup({
+        sources = {
+          null_ls.builtins.formatting.clang_format,
+          null_ls.builtins.formatting.stylua,
+          -- null_ls.builtins.formatting.black,
+          null_ls.builtins.formatting.isort,
+          null_ls.builtins.completion.spell,
+          require("none-ls.diagnostics.eslint"),
+          require("none-ls.formatting.yq"),
+          require("none-ls.formatting.ruff_format"),
+          require("none-ls.formatting.rustfmt"),
+        },
+      })
+    end,
+  },
+  {
+    "nvimtools/none-ls-extras.nvim",
+    name = "none-ls-extras.nvim",
+    commit = "336e84b",
+    event = "VeryLazy",
   },
 }

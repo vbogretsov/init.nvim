@@ -57,7 +57,7 @@ return {
   {
     "hoob3rt/lualine.nvim",
     commit = "84ffb80",
-    lazy = false,
+    event = "VeryLazy",
     dependencies = { "everforest", "nvim-web-devicons" },
     opts = opts,
   },

@@ -115,11 +115,13 @@ return {
   {
     "vbogretsov/easyclip.vim",
     -- TODO: move to `keys` trigger
-    event = "VimEnter",
+    event = "VeryLazy",
   },
   {
     "tpope/vim-surround",
     tag = "v2.2",
+    -- TODO: init on keys
+    event = "VeryLazy",
   },
   {
     "windwp/nvim-autopairs",
@@ -131,15 +133,18 @@ return {
     "kevinhwang91/nvim-hlslens",
     commit = "5e3e908",
     config = true,
+    keys = { "/" },
   },
   {
     "petertriho/nvim-scrollbar",
     commit = "35f99d5",
     config = setup_scrollbar,
+    event = "VeryLazy",
   },
   {
     "norcalli/nvim-colorizer.lua",
     commit = "36c610a",
+    event = "VeryLazy",
     config = function()
       require("colorizer").setup({ "*" }, {
         RGB = true,

@@ -11,7 +11,7 @@ local opts = {
 return {
   {
     "williamboman/mason.nvim",
-    commit = "41e75af",
+    tag = "v1.10.0",
     opts = opts,
     cmd = "Mason",
   },
@@ -19,5 +19,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     commit = "9453e3d",
     config = true,
+    event = "VeryLazy",
   },
 }
