@@ -13,7 +13,7 @@ return {
     "williamboman/mason.nvim",
     tag = "v1.10.0",
     opts = opts,
-    -- cmd = { "Mason", "MasonInstall", "MasonUninstall" },
+    cmd = { "Mason", "MasonInstall", "MasonUninstall" },
   },
   {
     "williamboman/mason-lspconfig.nvim",
