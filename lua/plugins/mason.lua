@@ -19,6 +19,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     commit = "9453e3d",
     config = true,
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
 }

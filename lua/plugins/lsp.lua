@@ -150,13 +150,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     commit = "92166b8",
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = setup,
   },
   {
     "nvimtools/none-ls.nvim",
     commit = "8691504",
-    event = "VeryLazy",
+    event = "BufReadPost",
     dependencies = { "none-ls-extras.nvim" },
 
     config = function()
@@ -180,6 +180,6 @@ return {
     "nvimtools/none-ls-extras.nvim",
     name = "none-ls-extras.nvim",
     commit = "336e84b",
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
 }

@@ -140,7 +140,7 @@ return {
   {
     "tzachar/fuzzy.nvim",
     commit = "67a42ad",
-    event = "VeryLazy",
+    event = "BufReadPost",
   },
   {
     "hrsh7th/nvim-cmp",

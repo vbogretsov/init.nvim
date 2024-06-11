@@ -69,7 +69,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "7958ff9",
-    event = "VeryLazy",
+    event = "BufRead",
     config = function()
       require("nvim-treesitter.configs").setup(opts)
     end,
@@ -77,18 +77,18 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     commit = "34867c6",
-    event = "VeryLazy",
+    event = "BufRead",
   },
   {
     "windwp/nvim-ts-autotag",
     commit = "6eb4120",
-    event = "VeryLazy",
+    event = "BufRead",
     config = true,
   },
   {
     "IndianBoy42/tree-sitter-just",
     commit = "6c2f018",
-    event = "VeryLazy",
+    event = "BufRead",
     config = true,
   },
 }
