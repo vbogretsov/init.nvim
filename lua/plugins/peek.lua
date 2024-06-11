@@ -15,6 +15,11 @@ local function setup()
   vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 end
 
+local mason, _ = pcall(require, "mason")
+if not mason then
+  return { }
+end
+
 return {
   {
     "toppair/peek.nvim",

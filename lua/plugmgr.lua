@@ -32,6 +32,10 @@ local opts = {
     enabled = false,
     notify = false,
   },
+  install = {
+    missing = false,
+    colorscheme = { "everforest" },
+  },
 }
 
 lazy.setup("plugins", opts)
