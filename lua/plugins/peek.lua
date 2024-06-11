@@ -6,7 +6,7 @@ local function setup()
     theme = "light",
     update_on_change = true,
     app = "webview",
-    filetype = { "markdown", "rst" },
+    filetype = { "markdown" },
     throttle_at = 200000,
     throttle_time = "auto",
   })
