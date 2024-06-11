@@ -69,7 +69,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     commit = "7958ff9",
-    event = "BufRead",
+    event = "BufAdd",
     config = function()
       require("nvim-treesitter.configs").setup(opts)
     end,
@@ -82,13 +82,12 @@ return {
   {
     "windwp/nvim-ts-autotag",
     commit = "6eb4120",
-    event = "BufRead",
-    config = true,
+    event = "BufAdd",
   },
   {
     "IndianBoy42/tree-sitter-just",
     commit = "6c2f018",
-    event = "BufRead",
+    event = "BufAdd",
     config = true,
   },
 }

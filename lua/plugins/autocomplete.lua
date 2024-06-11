@@ -140,7 +140,7 @@ return {
   {
     "tzachar/fuzzy.nvim",
     commit = "67a42ad",
-    event = "BufReadPost",
+    event = "BufAdd",
   },
   {
     "hrsh7th/nvim-cmp",
@@ -166,7 +166,7 @@ return {
   {
     "hrsh7th/cmp-cmdline",
     commit = "c66c379",
-    event = "InsertEnter",
+    event = "CmdlineEnter",
   },
   {
     "tzachar/cmp-fuzzy-buffer",

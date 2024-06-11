@@ -19,7 +19,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     commit = "6ef8c54",
-    event = "BufRead",
+    event = "BufReadPost",
     config = true,
   },
 }
