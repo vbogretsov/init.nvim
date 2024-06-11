@@ -81,7 +81,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    commit = "6eb4120",
+    commit = "2692808",
     event = "BufAdd",
   },
   {

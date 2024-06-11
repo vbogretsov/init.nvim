@@ -13,6 +13,8 @@ local deps = {
   "yaml-language-server",
   "lua-language-server",
   "typescript-language-server",
+  "docker-compose-language-service",
+  "dockerfile-language-server",
   "gopls",
   "pyright",
   "deno",
