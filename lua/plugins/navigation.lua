@@ -99,6 +99,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     commit = "84c5a71",
+    event = "BufReadPost",
     cmd = "Telescope",
     config = setup,
     dependencies = { "plenary" },

@@ -17,6 +17,10 @@ local function confirm_delete()
   return vim.fn.input("Confirm delete (y/n): ") == "y"
 end
 
+local function bufdelete(bufnr)
+  pcall(vim.fn.execute, ":Bdelete " .. bufnr)
+end
+
 local function delete_single()
   if not confirm_delete() then
     return
@@ -26,7 +30,7 @@ local function delete_single()
   local bufs = get_buf_names()
   local bufnr = bufs[utils.get_element(line)]
   if bufnr ~= nil then
-    vim.fn.execute(":Bdelete " .. bufnr)
+    bufdelete(bufnr)
   end
   require("drex.actions.files").delete("line")
 end
@@ -42,7 +46,7 @@ local function delete_selected()
     local line = vim.fn.getline(n)
     local bufnr = bufs[utils.get_element(line)]
     if bufnr ~= nil then
-      vim.fn.execute(":Bdelete " .. bufnr)
+      bufdelete(bufnr)
     end
   end
   require("drex.actions.files").delete("visual")
@@ -59,7 +63,7 @@ local function delete_clipboard()
   for i, line in ipairs(elements) do
     local bufnr = bufs[line]
     if bufnr ~= nil then
-      vim.fn.execute(":Bdelete " .. bufnr)
+      bufdelete(bufnr)
     end
   end
   require("drex.actions.files").delete("clipboard")
