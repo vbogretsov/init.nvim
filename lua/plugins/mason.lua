@@ -13,12 +13,13 @@ return {
     "williamboman/mason.nvim",
     tag = "v1.10.0",
     opts = opts,
-    cmd = "Mason",
+    cmd = { "Mason", "MasonInstall", "MasonUninstall" },
   },
   {
     "williamboman/mason-lspconfig.nvim",
     commit = "9453e3d",
     config = true,
-    event = "VeryLazy",
+    event = "BufAdd",
+    dependencies = { "neovim/nvim-lspconfig" },
   },
 }

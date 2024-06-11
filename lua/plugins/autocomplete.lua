@@ -166,7 +166,8 @@ return {
   {
     "hrsh7th/cmp-cmdline",
     commit = "c66c379",
-    event = "CmdlineEnter",
+    -- event = "CmdlineEnter",
+    event = "InsertEnter",
   },
   {
     "tzachar/cmp-fuzzy-buffer",
