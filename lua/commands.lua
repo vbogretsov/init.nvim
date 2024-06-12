@@ -10,6 +10,8 @@ local deps = {
   "clangd",
   "clang-format",
   "json-lsp",
+  "eslint-lsp",
+  "eslint_d",
   "yaml-language-server",
   "lua-language-server",
   "typescript-language-server",
