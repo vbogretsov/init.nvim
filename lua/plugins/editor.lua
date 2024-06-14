@@ -115,13 +115,13 @@ return {
   {
     "vbogretsov/easyclip.vim",
     -- TODO: move to `keys` trigger
-    event = "BufReadPost",
+    event = { "BufAdd", "BufReadPost" },
   },
   {
     "tpope/vim-surround",
     tag = "v2.2",
     -- TODO: init on keys
-    event = "BufReadPost",
+    event = { "BufAdd", "BufReadPost" },
   },
   {
     "windwp/nvim-autopairs",
@@ -144,7 +144,7 @@ return {
   {
     "norcalli/nvim-colorizer.lua",
     commit = "36c610a",
-    event = "BufReadPost",
+    event = { "BufAdd", "BufReadPost" },
     config = function()
       require("colorizer").setup({ "*" }, {
         RGB = true,

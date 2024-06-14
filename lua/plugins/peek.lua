@@ -5,7 +5,8 @@ local function setup()
     syntax = true,
     theme = "light",
     update_on_change = true,
-    app = "webview",
+    -- app = "webview",
+    app = "browser",
     filetype = { "markdown" },
     throttle_at = 200000,
     throttle_time = "auto",
@@ -17,7 +18,7 @@ end
 
 local mason, _ = pcall(require, "mason")
 if not mason then
-  return { }
+  return {}
 end
 
 return {

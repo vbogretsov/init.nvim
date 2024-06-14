@@ -19,7 +19,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     commit = "9453e3d",
     config = true,
-    event = "BufAdd",
+    event = { "BufAdd", "BufReadPost" },
     dependencies = { "neovim/nvim-lspconfig" },
   },
 }
