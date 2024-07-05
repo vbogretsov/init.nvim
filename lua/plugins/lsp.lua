@@ -42,20 +42,33 @@ local function setup()
   })
 
   -- Python
-  local function detect_python()
-    local venvdir = ".venv"
-    local path = util.path
+  local function detect_root()
+    local venv = ".venv"
+
     local cwd = vim.fn.getcwd()
-    if path.exists(path.join(cwd, venvdir)) then
-      return path.join(cwd, venvdir, "bin", "python")
+    local cp = vim.fs.joinpath(cwd, vim.fs.dirname(vim.fn.expand("%")))
+
+    while #(cp) >= #(cwd) do
+      if util.path.exists(vim.fs.joinpath(cp, venv)) then
+        return cp
+      end
+      cp = vim.fs.dirname(cp)
+    end
+
+    return vim.fn.getcwd()
+  end
+
+  local function detect_python()
+    local root = detect_root()
+    local venv = vim.fs.joinpath(root, ".venv")
+    if util.path.exists(venv) then
+      return vim.fs.joinpath(venv, "bin", "python")
     end
     return "python"
   end
 
   lsp.pyright.setup({
-    root_dir = function()
-      return vim.fn.getcwd()
-    end,
+    root_dir = detect_root,
     settings = {
       python = {
         venvPath = "",
@@ -101,21 +114,21 @@ local function setup()
     on_init = function(client)
       local path = client.workspace_folders[1].name
       if
-        vim.loop.fs_stat(path .. "/.luarc.json")
-        or vim.loop.fs_stat(path .. "/.luarc.jsonc")
+          vim.loop.fs_stat(path .. "/.luarc.json")
+          or vim.loop.fs_stat(path .. "/.luarc.jsonc")
       then
         return
       end
       client.config.settings.Lua =
-        vim.tbl_deep_extend("force", client.config.settings.Lua, {
-          runtime = {
-            version = "LuaJIT",
-          },
-          workspace = {
-            checkThirdParty = false,
-            library = vim.api.nvim_get_runtime_file("", true),
-          },
-        })
+          vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = {
+              version = "LuaJIT",
+            },
+            workspace = {
+              checkThirdParty = false,
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+          })
     end,
     settings = {
       Lua = {},

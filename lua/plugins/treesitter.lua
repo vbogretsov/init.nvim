@@ -9,7 +9,6 @@ local opts = {
     enable = true,
     disable = {
       "yaml",
-      "python",
       "c",
       "go",
     },
