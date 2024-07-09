@@ -184,6 +184,7 @@ return {
           require("none-ls.formatting.yq"),
           require("none-ls.formatting.ruff_format"),
           require("none-ls.formatting.rustfmt"),
+          require("none-ls.formatting.eslint"),
         },
       })
     end,
