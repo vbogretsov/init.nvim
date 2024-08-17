@@ -1,4 +1,5 @@
 local function setup()
+  local string = require("string")
   local lsp = require("lspconfig")
   local util = require("lspconfig/util")
 
@@ -41,12 +42,19 @@ local function setup()
     capabilities = caps,
   })
 
+  -- Ruby
+  -- requires ruby-lsp
+  lsp.ruby_lsp.setup({})
+
   -- Python
   local function detect_root()
     local venv = ".venv"
 
     local cwd = vim.fn.getcwd()
-    local cp = vim.fs.joinpath(cwd, vim.fs.dirname(vim.fn.expand("%")))
+    local cp = vim.fs.dirname(vim.fn.expand("%p"))
+    if not cp:find("^/") then
+      cp = vim.fs.joinpath(cwd, cp)
+    end
 
     while #(cp) >= #(cwd) do
       if util.path.exists(vim.fs.joinpath(cp, venv)) then
