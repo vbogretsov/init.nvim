@@ -1,0 +1,6 @@
+□ Dev Icon for .eslintignore
+□ Dev Icon for .eslintrc
+□ Dev Icon for .eslint.security
+□ Setup HTML language server
+□ Setupe CSS language server
+□ Fix lazy pluings to start LSP for use case nvim /path/to/file
