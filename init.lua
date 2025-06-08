@@ -1,0 +1,6 @@
+require("filetypes")
+require("options")
+require("plugmgr")
+require("keymaps")
+require("commands")
+require("lsp")

@@ -1,0 +1,66 @@
+return {
+  {
+    "sainnhe/everforest",
+    name = "everforest",
+    commit = "c4bb2ae",
+    lazy = false,
+    priority = 1000,
+    config = require("plugins.ui.colorscheme").setup,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "kyazdani42/nvim-web-devicons",
+    name = "nvim-web-devicons",
+    commit = "1fb58cc",
+    event = "VeryLazy",
+    opts = require("plugins.ui.icons").opts,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    tag = "v3.9.0",
+    main = "ibl",
+    event = "VeryLazy",
+    opts = require("plugins.ui.indent").opts,
+  },
+  {
+    "lukas-reineke/virt-column.nvim",
+    tag = "v2.0.3",
+    opts = { char = "┆" },
+    event = "VeryLazy",
+  },
+  {
+    "kevinhwang91/nvim-hlslens",
+    commit = "5e3e908",
+    config = true,
+    event = "VeryLazy",
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    commit = "35f99d5",
+    config = require("plugins.ui.scrollbar").setup,
+    event = "VeryLazy",
+  },
+  {
+    "hoob3rt/lualine.nvim",
+    commit = "0c6cca9",
+    event = "VeryLazy",
+    dependencies = { "everforest", "nvim-web-devicons" },
+    opts = require("plugins.ui.statusline").opts,
+  },
+  {
+    "famiu/bufdelete.nvim",
+    name = "bufdelete",
+    commit = "f6bcea7",
+    cmd = "Bdelete",
+  },
+  {
+    "akinsho/bufferline.nvim",
+    name = "bufferline",
+    event = "VeryLazy",
+    commit = "655133c",
+    dependencies = { "bufdelete" },
+    opts = require("plugins.ui.bufferline").opts,
+  },
+}
