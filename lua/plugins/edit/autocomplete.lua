@@ -1,4 +1,5 @@
-local kind_presets = {
+-- NOTE: Disabled because of new new fonts
+--[[ local kind_presets = {
   default = {
     Text = "",
     Method = "",
@@ -26,7 +27,7 @@ local kind_presets = {
     Operator = "",
     TypeParameter = "",
   },
-}
+} ]]
 
 local function setup()
   local cmp = require("cmp")
@@ -75,7 +76,8 @@ local function setup()
         maxwidth = 60,
         ellipsis_char = "...",
         preset = "default",
-        symbol_map = kind_presets.default,
+        -- symbol_map = kind_presets.default,
+        symbol_map = lspkind.default,
       }),
     },
     window = {

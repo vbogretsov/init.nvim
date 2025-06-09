@@ -11,7 +11,6 @@ local opts = {
     markdown = { "markdownfmt" },
     ptyhon = { "ruff_organize_imports", "ruff_format" },
     rust = { "rustfmt" },
-    sql = { "sqruff" },
   },
   default_format_opts = {
     lsp_format = "fallback",

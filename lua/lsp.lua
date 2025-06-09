@@ -11,6 +11,7 @@ vim.lsp.enable({
   "lua",
   "python",
   "rust",
+  "sql",
   "terraform",
   "typescript",
   "yaml",
