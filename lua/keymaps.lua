@@ -244,6 +244,12 @@ vim.api.nvim_set_keymap(
   "<cmd>lua vim.lsp.buf.rename()<CR>",
   { noremap = true, silent = true }
 )
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>i",
+  "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { noremap = true, silent = true }
+)
 
 -- Telescope
 vim.api.nvim_set_keymap(

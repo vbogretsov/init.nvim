@@ -9,7 +9,6 @@ return {
     "b3nj5m1n/kommentary",
     commit = "d5a111a",
     event = "VeryLazy",
-    dependencies = { "none-ls-extras.nvim" },
     config = require("plugins.edit.comments").setup,
   },
   {
@@ -36,13 +35,11 @@ return {
   },
   {
     "vbogretsov/cmp-cmdline",
-    -- commit = "c66c379",
     commit = "ef45321",
     event = "CmdlineEnter",
   },
   {
     "tzachar/cmp-fuzzy-buffer",
-    -- commit = "5da5f20",
     commit = "ada6352",
     event = "InsertEnter",
     dependencies = {
@@ -61,5 +58,10 @@ return {
     tag = "v4.8.1",
     cmd = "TableModeEnable",
   },
+  {
+    "stevearc/conform.nvim",
+    commit = "0e93e0d",
+    config = require("plugins.edit.format").setup,
+  }
 }
 
