@@ -35,8 +35,8 @@ local function setup()
   cmp.setup({
     sources = {
       { name = "nvim_lsp", priority = 1000 },
-      { name = "fuzzy_buffer", priority = 500 },
-      { name = "path", priority = 250 },
+      { name = "path", priority = 1 },
+      { name = "fuzzy_buffer", priority = 1 },
     },
     mapping = {
       ["<C-p>"] = cmp.mapping.select_prev_item(),
