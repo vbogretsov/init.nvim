@@ -1,6 +1,10 @@
 local opts = {
   override = {
     ["Dockerfile"] = { icon = "", color = "#519aba", name = "Dockerfile" },
+    ["d2"] = { icon = "󱁉", color = "#83c092", name = "d2" },
+    ["excalidraw"] = { icon = "󱁉", color = "#83c092", name = "d2" },
+    ["drawio"] = { icon = "󱁉", color = "#f2a622", name = "d2" },
+    ["excalidraw.png"] = { icon = "󱁉", color = "#83c092", name = "d2" },
     ["py"] = { icon = "", color = "#519aba", cterm_color = "61", name = "Py" },
     ["pyc"] = { icon = "", color = "#519aba", cterm_color = "67", name = "Pyc" },
     ["pyd"] = { icon = "", color = "#519aba", cterm_color = "67", name = "Pyd" },

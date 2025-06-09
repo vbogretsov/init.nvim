@@ -61,6 +61,7 @@ return {
   {
     "stevearc/conform.nvim",
     commit = "0e93e0d",
+    cmd    = "F",
     config = require("plugins.edit.format").setup,
   }
 }

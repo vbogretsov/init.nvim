@@ -49,14 +49,14 @@ local opts = {
         ["mb"] = "@block.outer",
       },
       goto_next_end = {
-        [''] = '@function.outer',
+        [""] = "@function.outer",
       },
       goto_previous_start = {
         ["mF"] = "@function.outer",
         ["mC"] = "@class.outer",
       },
       goto_previous_end = {
-        [''] = '@function.outer',
+        [""] = "@function.outer",
       },
     },
   },
@@ -81,5 +81,12 @@ return {
     "windwp/nvim-ts-autotag",
     commit = "a1d526a",
     event = "InsertEnter",
+  },
+  {
+    "ravsii/tree-sitter-d2",
+    commit = "f40a9fa",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    build = "make nvim-install",
   },
 }
